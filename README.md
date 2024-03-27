@@ -1,6 +1,6 @@
-# Quarto course website template
+# Compass Report Template
 
-A template for course websites developed with [Quarto](https://quarto.org) and hosted on GitHub.
+A template for Compass Reports developed with [Quarto](https://quarto.org) and hosted on GitHub.
 
 This is all configured so you only need to edit the source files in Quarto (.qmd). The website is generated and hosted automatically by GitHub.
 
