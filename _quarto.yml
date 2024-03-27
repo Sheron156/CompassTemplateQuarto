@@ -14,9 +14,9 @@ website:
     contents:
       - href: index.qmd
         text: Welcome
-      - href: schedule.qmd
+      - href: filedispo.qmd
         text: File Disposition
-      - href: materials.qmd
+      - href: closingsummary.qmd
         text: Closing Summary
 
 style: "docked"
