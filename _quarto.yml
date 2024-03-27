@@ -3,32 +3,35 @@ project:
   output-dir: docs
 
 website:
-  title: "Course Title"
+  title: "Compass Tutorials"
+
   sidebar:
-    background: primary
-    # logo: "images/logo.png"
+    background: "#D9E3E4"
+    logo: "images/logo.png"
     pinned: true
     align: center
-    tools:
-      - icon: github
-        href: https://github.com/Pakillo/quarto-course-website-template
-        text: GitHub
     style: docked
     contents:
       - href: index.qmd
-        text: Home
+        text: Welcome
       - href: schedule.qmd
-        text: Schedule
+        text: File Disposition
       - href: materials.qmd
-        text: Materials
-      - href: https://github.com/Pakillo/quarto-course-website-template/discussions
-        text: Forum
+        text: Closing Summary
+
+style: "docked"
 
 format:
   html:
     theme: cosmo
     # css: styles.css
     toc: true
+    code-copy: true
+    code-overflow: wrap
+
+page-footer:
+  right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+  left: "&copy; CC-By Compass, 2024"
 
 execute:
   freeze: auto
