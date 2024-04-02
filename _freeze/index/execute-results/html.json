@@ -1,9 +1,11 @@
 {
-  "hash": "d7905b08c74a3640ba0b2ad8f2af08d2",
+  "hash": "d5838bf6b6cda4c2d96ed8596588e351",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Clinical Tutorials\"\nsubtitle: \"Some other Stuff\"\nauthor: \"Office of System Performance\"\ndate: \"2024-03-27\"\n---\n\n\n\n\n# How to use the guide\n\nThis template will allow you to create a Compass standard html report. If you would like multiple tabs, ensure the tabset code above (in the curly parentheses) is placed after a main heading, this will ensure that headings below it (preceded by '\\##' will be the tabs)\n\n::: panel-tabset\n## File Disposition\n\n\n::: {.cell}\n\n```{.r .cell-code}\nCompassColours <- c('#F16823','#FDB816','#BED62F','#DEE48C','#8CD3D6','#4AB8C1','#286169','#133438')\n```\n:::\n\n\n## Closing Summary\n:::\n\n\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Clinical Tutorials\"\nsubtitle: \"Some other Stuff\"\nauthor: \"Office of System Performance\"\ndate: \"2024-04-02\"\n---\n\n\n\n\n# How to use the guide\n\nThis template will allow you to create a Compass standard html report. If you would like multiple tabs, ensure the tabset code above (in the curly parentheses) is placed after a main heading, this will ensure that headings below it (preceded by '\\##' will be the tabs)\n\n::: panel-tabset\n## File Disposition\n\n\n::: {.cell}\n\n```{.r .cell-code}\nCompassColours <- c('#F16823','#FDB816','#BED62F','#DEE48C','#8CD3D6','#4AB8C1','#286169','#133438')\n```\n:::\n\n\n## Closing Summary\n:::\n\n![](images/dataquality_legend.png)\n",
+    "supporting": [
+      "index_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

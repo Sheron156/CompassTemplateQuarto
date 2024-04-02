@@ -5,7 +5,6 @@ author: "Office of System Performance"
 date: "`r Sys.Date()`"
 ---
 
-
 ```{r setup, include=FALSE}
 
 # template comes from: https://github.com/rstudio-conf-2022/teach-ds-course-website/tree/main
@@ -35,4 +34,4 @@ CompassColours <- c('#F16823','#FDB816','#BED62F','#DEE48C','#8CD3D6','#4AB8C1',
 ## Closing Summary
 :::
 
-
+![](images/dataquality_legend.png)

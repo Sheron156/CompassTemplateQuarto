@@ -15,5 +15,3 @@ Example website: https://pakillo.github.io/quarto-course-website-template (see a
 3.  Important: check 'Include all branches' when creating the repository (because we will need the `gh-pages` branch to host the website).
 
 4.  Once your repo is created, remember to update the links to your GitHub repo in [\_quarto.yml](_quarto.yml), replacing 'Pakillo' with your GitHub username.
-
-![](images/dataquality_legend.png)
