@@ -1,0 +1,39 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=M+PLUS+Rounded+1c:wght@300;400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Varela+Round&display=swap');
+
+$font-family: "Nunito", sans-serif;
+$font-family-monospace: "Nunito", sans-serif;
+
+/*-- scss:defaults --*/
+
+$h1-font-size:          2.8rem;
+$h2-font-size:          1.6rem !default;
+$headings-font-weight:  350 !default;
+$body-font-size: 1.1rem;
+
+$body-bg: white;
+$body-color: #373a3c;
+$link-color: #286169;
+$tabset-border-color: #286169;
+$code-color: #133438;
+
+/*$code-bg: white;*/
+
+/*-- callouts --*/
+
+$callout-color-note: #8CD3D6;
+$callout-color-important: #F16823;
+$callout-color-warning: #FDB816;
+$callout-color-caution: #286169;
+$callout-color-tip: #BED62F;
+
+/*-- scss:rules --*/
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 350;
+  color: #133438;
+}

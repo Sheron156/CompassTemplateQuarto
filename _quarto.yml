@@ -6,7 +6,7 @@ website:
   title: "Compass Tutorials"
 
   sidebar:
-    background: "#D9E3E4"
+    background: "#f9f9f9"
     logo: "images/logo.png"
     pinned: true
     align: center
@@ -23,11 +23,12 @@ style: "docked"
 
 format:
   html:
-    theme: cosmo
+    theme: [cosmo, theme.scss]
     # css: styles.css
     toc: true
     code-copy: true
     code-overflow: wrap
+    lightbox: true
 
 page-footer:
   right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
