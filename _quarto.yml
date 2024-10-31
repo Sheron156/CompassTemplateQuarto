@@ -56,5 +56,4 @@ page-footer:
 
 execute:
   freeze: auto
-  cache: true
 
