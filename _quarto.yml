@@ -38,6 +38,7 @@ format:
     # css: styles.css
     toc: true
     toc-depth: 3
+    code-fold: show
     code-copy: true
     code-overflow: wrap
     lightbox: true

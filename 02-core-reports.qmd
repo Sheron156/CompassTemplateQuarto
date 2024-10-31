@@ -28,7 +28,7 @@ The following core reports require you to be logged into EMHware and have clicke
 To avoid saving files in places they shouldn't be, we recommend seting your browser to *prompt* when a download is ready so that you can select specifically where you would like new downloads to go (rather than to the downloads directory). In Chrome, click the three vertical dots at the top right of the browser --\> settings --\> Downloads --\> "Ask where to save each file before downloading"
 :::
 
-## Detailed Program History and Client Data {#ProgramHistoryWeekly}
+### Detailed Program History and Client Data {#ProgramHistoryWeekly}
 
 1.  Under EMHware Report Suite dropdown select **Custom Reports**
 
@@ -102,7 +102,7 @@ M:\DATA & REPORTS\Clinical & Client Services\Clinical Data\School Data
 
 1.  Under EMHware Report Suite dropdown click **Custom Reports**
 
-2.  Select **"Case Data Data Extract in Column Format"**
+2.  Select **"Case Data Task Data Extract in Column Format"**
 
 3.  Clear Start and End Date by clicking the "Reset" button (top right)
 
