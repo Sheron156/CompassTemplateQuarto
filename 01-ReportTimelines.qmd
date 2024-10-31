@@ -13,7 +13,7 @@ For a pdf version of the table, right click the Routine Report pdf below this ta
 
 ::: {.column width="40%"}
 **Right click to save the file to disk.**
-[![PDF Version](reference/CompassTypst.pdf)]
+[![PDF Version](local://reference/CompassTypst.pdf)]
 :::
 
 ::::
