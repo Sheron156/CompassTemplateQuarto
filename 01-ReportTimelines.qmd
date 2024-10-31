@@ -1,4 +1,4 @@
-# List of all Routine Reports {.unnumbered}
+# All Reports List {.unnumbered}
 
 All of the reports in this table have a corresponding tutorial (see TOC headings Core Weekly Reports, Monthly Reports and Quarterly Reports to the left). Here is where you'll find detailed, step by step instructions.
 
@@ -6,11 +6,10 @@ For a pdf version of the table, right click the Routine Report pdf below this ta
 
 ```{r}
 #| echo: false
-#| column: body-outset-right
+#| column: page-right
 #| 
 library(tidyverse)
 library(readxl)
-library(DT)
 library(gt)
 library(downloadthis)
 library(gtExtras)
@@ -21,9 +20,9 @@ ReportDictionary <- read_excel("M:/DATA & REPORTS/Routine Reports/ReportDictiona
 table<-ReportDictionary %>% 
   gt() |>
   cols_width(
-    Report ~ px(300),
+    Report ~ px(250),
     #`Data Destination` ~ px(200),
-    `Purpose`~px(400)) %>%
+    `Purpose`~px(350)) %>%
   opt_interactive(
   active = TRUE,
   use_pagination = TRUE,
@@ -69,32 +68,3 @@ table
 **Right click to save the file to disk.**
 
 [![](reference/CompassTypst.pdf)](reference/CompassTypst.pdf)
-
-
-```{r}
-#| eval: false
-ReportDictionary %>% 
-  filter(2 == "Weekly")
-  gt() %>% tab_header(
-  title="Weekly, Monthly and Quarterly Reports Summary",
-  subtitle="Click report name for step by step instructions. Download the entire table via button below"
-)|>
-  tab_footnote(
-    footnote = "Click the download button to save the table to your drive.",
-    locations = cells_body(columns = 1, rows = 1)
-  ) %>% tab_source_note(ReportDictionary %>%
-                        download_this(
-                          output_name = "ReportTimelines",
-                          output_extension = ".xlsx",
-                          button_label = "Download Excel",
-                          button_type="primary"
-                        )
-                        ) %>% 
-                          sub_missing(
-  columns = everything(),
-  rows = everything(),
-  missing_text = "---"
-) |>
-  fmt_url(columns = 'Report') |> 
-  tab_options(table.font.size=10) 
-```
