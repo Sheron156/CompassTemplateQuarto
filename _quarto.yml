@@ -22,6 +22,7 @@ book:
     - part: Other Data Tasks
       chapters:
         - 06-Compass-Data-Workflow.qmd
+        - ExternalTutorials.qmd
         - 10-Troubleshooting.qmd
         - 11-Visualizations-in-R.qmd
 

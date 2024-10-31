@@ -1,12 +1,6 @@
----
-editor: 
-  markdown: 
-    wrap: 72
----
-
 # How Tos {.unnumbered}
 
-# Adding Quarterly/Monthly File Audits to emhware
+## Adding Quarterly/Monthly File Audits to emhware
 
 1.  Type in name of worker
 
@@ -29,7 +23,7 @@ workers within the last two years that are on the client file
 library(tidyverse)
 ```
 
-# Adding new workers to emhware for supervisor notes
+## Adding new workers to emhware for supervisor notes
 
 1.  From main emhware dashboard click green + sign at top right to enter
     new client
@@ -93,7 +87,7 @@ M:\DATA & REPORTS\Clinical & Client Services\Clinical Data\ASEBA
     Referral source = self. Presenting issue = Other. Receiving Services
     date today. Then click save.
 
-# Submitting New Form Requests to EMHWare Support
+## Submitting New Form Requests to EMHWare Support
 
 New Form tasks are tracked in an [Asana
 project](https://app.asana.com/0/1150008016817939/1150008016817939) with
@@ -139,7 +133,7 @@ Some general guidelines for completing the specifications pdf:
 
     ![](images/Capture-01.PNG)
 
-# Compass Branding
+## Compass Branding
 
 Compass Colours (open in R or copy and paste the hex codes below to your
 own Rmarkdown doc).
@@ -158,7 +152,7 @@ show_col(CompassColours)
 
 ```
 
-# Compass R Markdown Template
+## Compass R Markdown Template
 
 To install the Compass Markdown Template:
 
@@ -174,35 +168,7 @@ library(CompassTemplate)
 Then select New File, R Markdown, from Template and select the Compass
 Template.
 
-# Other Data Related Tasks
-
-## Wrangling data with R
-
-To grab all detailed program history data from server
-
-```{r}
-
-# Grab Detailed Program History data
-
-PH <- list.files(path = "M:/DATA & REPORTS/Clinical & Client Services/Clinical Data/Program Histories/Detailed Program History and Client Data",  # Identify all CSV files
-                       pattern = "*.csv", full.names = TRUE) %>% 
-  map_df(~read_csv(., col_types = cols(.default = "c")))
-
-
-
-```
-
-To grab all contact data from server
-
-```{r}
-
-# Grab Contact Data
-
-CD <- list.files(path = "M:/DATA & REPORTS/Clinical & Client Services/Clinical Data/Time Entry",  # Identify all CSV files
-                       pattern = "*.csv", full.names = TRUE) %>% 
-  map_df(~read_csv(., col_types = cols(.default = "c")))
-
-```
+## Other Data Related Tasks
 
 ## Building Models
 

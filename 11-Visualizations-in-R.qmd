@@ -1,9 +1,9 @@
 # Visualizations in R {-}
 
-# Necessary Packages
-
 ```{r}
-
+#| warning: false
+#| message: false
+#| 
 library(tidyverse)
 library(ggplot2)
 library(effects)

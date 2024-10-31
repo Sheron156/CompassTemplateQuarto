@@ -1,0 +1,9 @@
+# External Tutorials {.unnumbered}
+
+## R Data Cleaning Master Class
+
+This is a class we paid for. It is excellent.
+
+![](images/paste-1.png){width="237"}
+
+https://arapp.thinkific.com/enrollments
