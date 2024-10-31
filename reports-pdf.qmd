@@ -1,4 +1,4 @@
-# Routine Report List {.hidden}
+# Routine Report PDF {-}
 
 ```{=html}
 <object data="reference/CompassTypst.pdf" type="application/pdf" width="100%" height="100%" style="min-height:100vh;">
