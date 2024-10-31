@@ -1,4 +1,4 @@
-# Report Timelines {#ReportTimelines}
+#  {#ReportTimelines}
 
 All of the reports in this table have a corresponding tutorial (see TOC headings Core Weekly Reports, Monthly Reports and Quarterly Reports to the left). Here is where you'll find detailed, step by step instructions.
 
@@ -6,7 +6,7 @@ For a pdf version of the table, right click the Routine Report pdf below this ta
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
-library(dplyr)
+library(tidyverse)
 library(readxl)
 library(DT)
 library(gt)

@@ -1,8 +1,15 @@
-# Weekly Reports {.unnumbered, #WeeklyReports}
+---
+number-sections: true
+number-depth: 3
+---
 
-The following outlines how to pull the **weekly core data** for the BI dashboard. The files should be pulled every Monday morning and placed in their corresponding folder on the Master drive (see below).
+# Weekly Reports {#WeeklyReports}
 
-## ASEBA Reports {#ASEBAWeekly}
+The following tutorial will walk you through refreshing all of the data for the BI Core Dashboard. The files should be pulled every Monday morning and placed in their corresponding folder on the Master drive (see below).
+
+You will need your EMHware password, ASEBA password and Quicksite passwords to access all of the files needed .
+
+## ASEBA Report {#ASEBAWeekly}
 
 1.  Head to <https://aseba-web.org/SignIn?ReturnUrl=%2f> and log in.
 2.  Click **Clients** on left (above list of clients)
