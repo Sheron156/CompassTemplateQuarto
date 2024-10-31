@@ -1,0 +1,611 @@
+# Quarterly & Bi-Annual Reports {-}
+
+## BI Solution Quarterly Submission {#BiQuarterly}
+
+Here you will find instructions to complete many if not all of the reoccurring data reports and submissions the data analyst is responsible for producing.
+
+::: fyi
+The BI Solution data submissions must be completed on a quarterly basis based on the fiscal year. Our fiscal year runs from April 1 to March 31 the following year. Q1 = April 1, 2023 to June 30, 2023. All of these reports are running tasks on Asana.
+
+Once the final submission has been uploaded, download a pdf version of the dashboard and place using naming convention found in the folder:
+
+```{r, eval=FALSE}
+M:\Ministry funding (contracts, budgets, quarterly reports)\BI Solution
+```
+:::
+
+Every quarter, mental health agencies in Ontario are required to submit data. ASK NICK FOR SOME WORDAGE FOR HERE.
+
+To prepare for a submission you will first submit the data in the same way that you will at the end of the month. This is to check for submission errors. You will also complete several data quality reports (as outlined below) on the same schedule with the goal being to give yourself and the AA's enough time to correct input errors before the final submission due date.
+
+These steps should be completed at the beginning of the month following the quarter you're reporting and again at the end of the quarter for your final submission. For example, if you're reporting on Q1 (April 1, 2023 - June 30, 2023), you would begin preparing in early July for the final submission which is the last day of July.
+
+We recommended running through these analysis several times depending on how problematic the data is and once more after the AA's have completed their corrections (nearer the end of the month) to ensure the Ministry receives the most accurate data. Send the final submission one day before the end of the reporting month so that you have a day to fix any last minute things that may be off.
+
+### Submit BI Data to our lead agency site (the first step in any BI submission) {#LeadAgencyQuarterly}
+
+Complete the following:
+
+1.  In EMHware click **BI Submissions**
+
+    ![](images/bisubmissions.PNG){width="316"}
+
+2.  Select **Greater Sudbury/Manitoulin/Sudbury SA (Service Area)**
+
+3.  **CSP** should be set to **core service provider (Compass)**
+
+4.  Set ***date*** to the beginning of the fiscal year & ***Submission End Date*** to end of quarter you are reporting (e.g. April 1, 2023 to June 30, 2023 for Q1 and April 1, 2023 to September 30 for Q2).
+
+5.  Click on ***Do BI Submissions to Lead Agency*** (top right)
+
+6.  Wait a while.
+
+7.  Click ***Send Organization BI Info*** (top right)
+
+8.  Wait a while.
+
+9.  Check if there were any failed submissions by selecting the start of fiscal year (e.g. April 1, 2023) and end date today (on same page) but change **submission status** to **Failure** then click ***Search***.
+
+10. Check that there are no errors linked to the date you are submitting and if not, continue to next step.
+
+11. To check that the data was successfully sent, head to our emhware lead agency website <https://la-cfc.emhware.ca/login.php>. Your manager will have given you specific log in credentials for this site (not your usual emhware account info).
+
+```{r, include=FALSE, echo=FALSE, eval=FALSE}
+
+
+
+```
+
+16. Click ***LA BI Submissions*** (at top right)
+
+17. Ensure you are in the correct fiscal quarter and year range
+
+18. **CSP** and **SA** should be set to ***Compass*** **and *Greater Sudbury*** respectively.
+
+19. Click ***Submit Data*** to send the data to the Ministry. We can check that this step was successful ***the following day*** on the Ministry's BI solution website.
+
+### BI Solution Procedure {#BISolutionQuarterly}
+
+1.  The information that you uploaded from the lead agency website can be found on the [CYMH BI solution dashboard](https://www.ihbi.health.gov.on.ca/ibmcognos/bi/?perspective=home "BI Solution Dashboarrd") exactly one working day following your submission.
+
+2.  When logging into this website, you will be sent a temporary pin to your Compass email address. Use this pin to complete the login.
+
+3.  Click **CYMH** --\> **Reports** --\> **Exception Reports** --\> **CYMH File Exception Report**
+
+4.  Look at the first row---here is where you'll find the information regarding the quarter you just submitted. This report will tell you whether there were problems with specific files. **Ensure there are no rejections**.
+
+5.  At the top you'll notice **"File Submission Summary Report"** and next to it **"File Exception Detail report"**. If you need more detail---particularly if a file was rejected---this tab will be more informative.
+
+6.  Next examine the **CYMH Data Exception Report** by clicking the folder with the people icon in the left toolbar.
+
+7.  The quarter you just submitted should be on the top row. Ensure that these numbers make sense and pay attention to whether any clients were rejected and if there are clients with warnings which may warrant investigation.
+
+8.  As in the previous steps, click the **data exception detail report** to examine any problems in more detail.
+
+9.  If you find any problems that need correcting, you will record these in an excel file with the emhware Client ID, the BI CIS ID, the program ID, the worker and the correction needed. This table will be submitted to the Administrative Assistants (AAs) to be corrected. Moving forward, add an extra column with the AA that completed the Program History; this column is for monitoring purposes and will be removed before Tracy sends the corrections on.
+
+![Example excel document for AAs](images/AAexceldoc.PNG){width="699"}
+
+::: puzzle
+The BI Solution reports do ***not*** use the usual emhware client identifier, instead they use the **CIS Client ID**. When reporting errors to the AAs it is important to include the ***emhware Client ID*** alongside the BI CIS Client ID, program ID and worker.
+:::
+
+9.  To search for a client id in emhware using the ***BI CIS Client identifier***, click on the ***"Search Clients"*** area in top right of EMHware to load the search page. Enter the CIS code in the ***MCYS-CYMH BI CIS Identifier*** field and click search.
+
+    ![Client search dashboard](images/searchclients.PNG)
+
+    You can also head to the BI Submissions Tab (in EMHware), enter the submission start date (beginning of reporting quarter) and then enter the CIS Client ID in appropriate box to search for the records reported for that individual.
+
+### BI Data Quality Reports {#QuarterlyDataQuality}
+
+Preparing these data is part of the process of ensuring that the Ministry data we submit is as accurate as possible. Any problems we find will be added to an excel report for the AAs so that they can fix any problematic entries. You will want to go over any complex issues with your supervisor (i.e. Nick).
+
+![Example AA correction report](images/AAexceldoc.PNG)
+
+From Emhware you will generate the following reports:
+
+Under **Emhware Report Suite** dropdown select **MCYS-CYMH BI** where you will generate the following reports:
+
+1.  **BI Intake -- missing consents**
+    -   Set to the start of the fiscal year (e.g. April 1, 2023)
+    -   Select all programs
+    -   Click Run
+2.  **BI Intake** **-- missing needs assessments**
+    -   Set to start of fiscal year and end at end of quarter you're reporting
+    -   Program status: ***discharged***
+    -   you'll next go to the cymh reports tab, reset the fields, dates will be the fiscal start to end of quarter reporting. "**Authenticated Records Only**"
+    -   There is script at \~/R_Projects/Data Quality R Workspace called BI Solution data Quality that has some code to help you do this. Just place the two files in a folder in the project (named after the quarter)
+    -   modify the code to match the file names and folder you chose and run it.
+    -   Basically you want to create csv file for the AAs with all of the discharged clients missing a needs assessment (see sample excel file in q2 folder of this project)
+3.  **Completed BI intake without BI outcome** This reports any client discharged from a BI program (not waiting for another BI program) without a BI outcome.
+    -   These are usually sent to the AAs in the excel doc mentioned above.
+
+    -   Occasionally there will be a client who the clinician accesses a psych consult for (MOH funded) but there is no BI outcome required for this as there is no treatment, just consultation. In this case the BI Outcome can be checked off but NA should be selected under Clinical Determination of Outcome.
+
+<!-- -->
+
+4.  **Client with active program history missing BI intake**
+    -   You can **ignore** **One Stop Talk** (for now)
+
+    -   **Day Treatment Consult** is considered an intake service (like Brief Service)---but only when it is the FIRST intake, so when a file is opened **BI Intake** should be checked off in the program history and the **BI consent** should also be filled out. Because it is an intake service we don't check it off as a service referral. **So, if there is a BI program ongoing that predates the Day Treatment consult no BI intake is needed.** **Also, if the Day Treatment consult occurred when another program was active, it is fine too.**
+
+<!-- -->
+
+5.  **CYMH-BI Assessment Needs without Process Sub-type**
+    -   New one, no info to input here yet
+
+<!-- -->
+
+6.  **Heads-ed**
+
+    -   ignore this one too for now
+
+If any of these reports identify an issue (e.g. a file with a missing consent), investigate it and if it requires a change to the file (e.g. adding consent, changing dates etc.) you will add the requested change to your excel doc for the AAs (see above).
+
+### Pivot Reports {#PivotReports}
+
+1.  Go to **Custom Reports** (under reports)
+
+2.  **Detailed Program History and Client Data**
+
+3.  Select all programs (there is a filter in the R script that will remove the programs that are not necessary)
+
+4.  We want any client who was **waiting** or **receiving services** during the quarter. To get this data, set **Receiving Services Start** to the beginning of the quarter (e.g. April 1, 2023) and **Receiving Services End** to end of quarter (e.g. June 30, 2023 for Q1) and save the file in a temporary folder. Then run the same for **Waiting List Start** and finally for **Discharge Start** to their respective ends. You should have 3 CSVs by the end.
+
+<!-- -->
+
+4.  Use the "Quarterly_Pivot_Prep.R" R script to merge all three dfs, removing duplicate rows and programs that aren't necessary. Save as csv then open in Excel.
+
+5.  To check correct Program codes were input in Program History:
+
+On the data tab of excel, ***Insert a Pivot Table***, then drag ***BI Service Identifier*** into ***COLUMNS***, ***Program*** into ***ROWS*** and ***Client ID*** into ***Values*** and then click on it to select ***COUNT*** from the dropdown.
+
+Here you will see whether the **Program** matches up with the **BI Service Identifier** that was input into the program history. For example, below we see that there were 3 Brief Counselling servicesinput as brief services when they are actually Counselling/Therapy service (A349). We also see a Brief Service input as a Crisis Support Service. These are all corrections we would add to the AA excel document for correction.
+
+![](images/pivottabble.PNG)
+
+8.  To double check discharge coding, go back to the main Program History sheet in excel and insert pivot table again, this time put **BI Client Discharge Reason** in **COLUMNS**, **Exit Disposition** in **ROWS** and **count** of **Client ID** again in **Values**. Label the sheets if you like to make it easier to switch between them.
+
+9.  In Exit Dispositions, if **Refused/declined** services has been selected as reason for discharge, **services delivered** as BI discharge reason does not make sense and should be investigated/corrected.
+
+    ::: lightbulb
+    To check which specific clients the bad coding belongs to, double click the field in the pivot table and it will open a separate sheet with the Client IDs and Program History info for those specific clients.
+    :::
+
+10. Add any problems or entries that need correction to the excel spreadsheet (adding to the same spreadsheet you created when performing the other data quality checks above.
+
+11. Once all of these steps are complete, send the file to Tracy who will send it to the AAs for processing.
+
+12. Before sending the final BI data at the end of the month following the quarter end, run these checks again to ensure everything is correct.
+
+### Comparisons of BI Solution data to our data
+
+The dashboard isn't complete but the code and other stuff will be added here when it is.
+
+## Targets & Interim Actuals Bi-Annual MOH Reporting {#BiAnnualTargets}
+
+This is a standing task in Asana.
+
+To get current targets the BISP Report can be found here:
+
+The first link is the actual template, the second link is a completed report.
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Reports\Ministry Reporting\Biannual Service Progress (BiSP) Report - 2022-2023.xlsm. 
+
+M:\Ministry funding (contracts, budgets, quarterly reports)\22-23\MCCSS\budget\MCCSS 2223 Budget Form v3 (SAP additional funding).pdf
+
+```
+
+To update the BISP template for MOH program actuals
+
+::: puzzle
+please note some reports will quickly generate and others will take some time
+:::
+
+1.  In EMHware Reports suite select **MCYS reports**
+
+2.  Set dates to the beginning of the fiscal year and end of reporting quarter. You can also use the Q1-Q4 buttons if you ensure the year is correct .
+
+3.  Under MCYS function choose the program you need data for. This will be informed by the headings in the Biannual Service Progress report. Once selected, the form will auto-populate. Click run and download the pdf.
+
+4.  Using this document, you will fill out the **Biannual Service Progress Template**.
+
+5.  For the **Brief Services** section, use the Brief Service totals (leaving out One Stop Talk)
+
+6.  You will choose newer version of stats not old.
+
+7.  For **Counselling and Therapy**, use the Detail Code total rather than the breakdown of individual programs and leave the assessed needs for Nick to fill out.
+
+8.  For **CYMH Coordinated Access Intake Service Planning**, use our numbers for number of hours of direct service. Needs Assessment will be taken care of by Nick. Ensure that the number of children by age groups adds up to the number of unique children eligible for service. If a young person transitions to a new age in that quarter they may be counted twice--double check and only count them as 1.
+
+To see the individual youth that are being counted, you can access the *Detailed MCYS Report* and select the MCYS function (A352 Access Intake Planning) and for example INDSER# = number of individuals served.
+
+These codes are found on the emhware page where you initially downloaded the MCYS numbers.
+
+::: fyi
+The best df to pull for the unique clients served is the *historical client list all levels* with discharge as fy start and screening as fiscal year en
+:::
+
+See the shared drive for an excel document that nick put together that reveals how he makes this calculation (in case R numbers are coming up different).
+
+```{r, eval=FALSE}
+
+S:\Corporateplanning blah blah blab (add the good URL here)
+
+```
+
+9.  For **Intensive Treatment Services** the day treatment program has 58 spots. Run a separate report see how many kids were receiving intensive services at end of the fiscal quarter to calculate that number (see the same R script as above). Number of families service in home will say zero so use number of individuals served Intensive CFI and number of children/youth serviced out-of-home the remainder of youth---add all
+
+10. **Case Management and Service Coordination Process is Service Coordination Process** in EMHware MCYS submission. Outcome calculations for number of caregiver/youth reporting don't use the one in the pdf (skip for Nick to do) can use the youth positive outcome in pdf though also for number of caregive/youths reporting pos exp w/service system.
+
+**Skip \# of children/youth w/feedback of discharge also skip the transition one**
+
+11. **Specialized consultation/assessment** is pretty straight forwards except total number of training session which we pull from training calendar and count number of trainings (multiple days training for one program still counts as one)
+
+12. What about GDD??
+
+13. SNAP reports are weird carry over for households make same as children
+
+14. For SNAP gender numbers we might have to calculate as numbers in the pdf don't seem correct So calculate these numbers based on the df. Under multireports, client info and activity set dates SNAP group and individual and use these numbers
+
+15. Use \^\^ for language as well
+
+16. Grab Avg SNAP child's self-rate likert and caregiver one from survey monkey
+
+```{r}
+
+```
+
+## OPOC extract {#OPOCQuarterly}
+
+1.  Head to the OPOC website and log in with your credentials: <https://bireport.client-data-system.ca:8443/BOE/BI>
+
+2.  Export the Caregiver, Crisis and Standard Raw Data
+
+3.  To do this, double click on the row you need
+
+4.  Next click on the export symbol (top left-ish)
+
+5.  Unlick expired keys and select Excel .xlsx
+
+6.  Save to M:/Data & Reports/Clinical & Client Services/Satisfaction Data/OPOC
+
+7.  Save over previous quarter's dataframe
+
+8.  Do the same for each of the other two raw dataframes.
+
+## Section 34 Quarterlies {#Section34Quarterly}
+
+This report relates to forensic psychological assessments and requires the counts of client assessments completed. You can find this by counting the \# those that have a court order date (rec services) before the end of the quarter & a payment date (kinda like discharge) that is null or after the quarter start date. 1. On the Section 34 reoccurring task click the link to open the Section 34 Project in Asana
+
+-   Exclude cancelled
+-   Leave out 2nd assessments
+-   If payment date is missing use the date the task was completed (got to the hid icon and show completed on)
+
+## CCN - Case Coordination Wait List {#CCNQuarterly}
+
+\*\* This report runs quarterly on a fiscal year cycle and must be completed by the 10th of the month following the previous quarter.
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Reports\CCN Waitlists
+
+```
+
+The following reports are required from emhware:
+
+1.  **Current Client List - Waiting List**
+2.  **Historical Client List - All Levels Program(s)**
+
+Set the dates to:
+
+Receiving Services Start: [Start of past quarter (e.g., Oct 1)] Receiving Services End: [End of past quarter (e.g., Dec 31)]
+
+For these program(s):
+
+-   Counselling & Therapy
+
+-   GDD Rural
+
+-   GDD Urban
+
+-   Compass - GDD Rural
+
+2.  If you don't already have a CCN R project, create one now (instruction on setting up projects will be added eventually). Once the project is created, add the script below to this task in the root of the project and create a folder in the root called "data". Save the two reports you downloaded from emhware to the *data* folder of the R Project.
+
+### CCN Code {#CCNCode}
+
+```{r, CCN-code, eval=FALSE}
+
+
+############################################################################
+############################################################################
+###                                                                      ###
+###                        CCN QUARTERLY REPORT:                         ###
+###                    DATA WRANGLING AND CALCULATION                    ###
+###                                                                      ###
+############################################################################
+############################################################################
+
+rm(list = ls())
+library(readr)
+library(dplyr)
+library(tidyverse)
+library(data.table)
+library(bannerCommenter)
+
+###..............................................................................
+###..............................................................................
+###                               Instructions:                               ...
+###                                                                           ...
+###  1. ADD CURRENT & HISTORICAL CLIENT DATA FOR THE QUARTER TO DATA FOLDER   ...
+###                             2. Run the script                             ...
+###                  3. STATS WILL APPEAR IN CONSOLE WINDOW                   ...
+###..............................................................................
+###..............................................................................
+
+# 1. Grab the dfs we downloaded 
+
+Current_Clients <- read_csv("data/Current Client List - Waiting List.csv")
+
+
+Historical_Clients <- read_csv("data/Historical Client List - All Levels.csv")
+Historical_Clients <- slice(Historical_Clients, 1:(n() - 2)) # remove bottom two rows
+
+# 2. Grab the columns we need
+
+#& ID != 25113 & ID != 24983 & ID != 23128
+
+Historical <- Historical_Clients %>% 
+  filter(`Referral Source` != 'HSN CAMHP' & `Referral Source` != 'CAMHP'  & `Referral Source` != 'HSN - Crisis' & Worker !='Manager Waitlist') %>%
+  select(ID, Program, City, Worker, Location = "Location/County", "First Contact", "Waiting List", "Receiving Services", "Days Waiting to Services", Discharge, `Referral Source`)
+
+Current <- Current_Clients %>%
+  filter(`Referral Source` != 'HSN CAMHP' & `Referral Source` != 'CAMHP' & `Referral Source` != 'HSN - Crisis') %>%
+  select(ID, Program, City, Location = "Location/County", Worker, 'Waiting List Date', 'Days Elapsed', `Referral Source`)
+
+# The Historical df lists all those assigned in that quarter (no longer waiting) 
+
+# The Current df lists all those who are still waiting
+
+# 3. Create dfs for each category we're interested in
+
+####################################################
+# 3.1 GDD Urban
+#####################################################
+
+GDD_Urban_C <- Current %>%
+  filter(Program == 'GDD Urban')
+
+GDD_Urban_H <- Historical %>%
+  filter(Program == 'GDD Urban')
+
+##########################################
+# 3.2 GDD Rural
+##########################################
+
+GDD_Rural_C <- Current %>%
+  filter(Program == 'GDD Rural')
+
+GDD_Rural_H <- Historical %>%
+  filter(Program == 'GDD Rural')
+
+####################################
+# 4. Counselling & Therapy
+###################################
+
+CT_C <- Current %>%
+  filter(Program == 'Counselling & Therapy') 
+
+CT_H <- Historical %>%
+  filter(Program == 'Counselling & Therapy') 
+
+## Code for Rural and Urban in both the current waiting and historical waiting lists
+
+CT_C <- CT_C %>% 
+  mutate(LOC_Coding = case_when(
+    Location == "Urban - Sudbury" ~ "Urban",
+    Location %in% c("Rural - Manitoulin", "Rural - Espanola", "Rural - Chapleau", "Manitoulin District") ~ "Rural",
+    TRUE ~ case_when(
+      City %in% c("Espanola", "Manitowaning", "CHAPLEAU", "ESPANOLA", "KAGAWONG", "Spring Bay", "M'Chigeeng", 
+                  "Gore Bay", "SHEGUIANDAH", "Wikwemikong", "Little Current", "LITTLE CURRENT", "EVANSVILLE", 
+                  "Kagawong", "Chapleau", "Gogama", "NAIRN CENTRE") ~ "Rural",
+      Worker %in% c("April Gosselin", "Emma Chapman", "Kelsey Weisner", "Pam Yachuk", "Tara Hughes", "Tim Lemega", "Doriane Jones", "Crystal Piche") ~ "Rural",
+      TRUE ~ "Urban"
+    )
+  ))
+
+
+CT_H <- CT_H %>% 
+  mutate(LOC_Coding = case_when(
+    Location == "Urban - Sudbury" ~ "Urban",
+    Location %in% c("Rural - Manitoulin", "Rural - Espanola", "Rural - Chapleau", "Manitoulin District") ~ "Rural",
+    TRUE ~ case_when(
+      City %in% c("Espanola", "Manitowaning", "CHAPLEAU", "ESPANOLA", "KAGAWONG", "Spring Bay", "M'Chigeeng", 
+                  "Gore Bay", "SHEGUIANDAH", "Wikwemikong", "Little Current", "LITTLE CURRENT", "EVANSVILLE", 
+                  "Kagawong", "Chapleau", "Gogama", "NAIRN CENTRE") ~ "Rural",
+      Worker %in% c("April Gosselin", "Emma Chapman", "Kelsey Weisner", "Pam Yachuk", "Tara Hughes", "Tim Lemega", "Doriane Jones", "Crystal Piche") ~ "Rural",
+      TRUE ~ "Urban"
+    )
+  ))
+
+############################
+# C&T Urban
+############################
+
+CT_H_Urban <- CT_H %>%
+  filter(LOC_Coding == 'Urban') 
+
+CT_C_Urban <- CT_C %>%
+  filter(LOC_Coding == 'Urban') 
+
+############################
+# C&T Rural
+############################
+
+CT_H_Rural <- CT_H %>%
+  filter(LOC_Coding == 'Rural') 
+
+CT_C_Rural <- CT_C %>%
+  filter(LOC_Coding == 'Rural') 
+
+############# General Function to calculate all stats needed for each ddf
+
+stats_table <- function(df1, df2, round = 1) {
+  clients_assigned <- length(df1$ID)
+  ave_days_waiting_assigned <- round(mean(df1$'Days Waiting to Services'), round)
+  med_days_waiting_assigned <- round(median(df1$'Days Waiting to Services'), round)
+  clients_waiting <- length(unique(df2$ID))
+  ave_days_waiting_current <- round(mean(df2$'Days Elapsed'), round)
+  med_days_waiting_current <- round(median(df2$'Days Elapsed'), round)
+  
+  # Create a data frame with the statistics we need
+  
+  stats_df <- data.frame(
+    Measure = c("Clients Assigned", "Average Days Waiting (Assigned)", "Median Days Waiting (Assigned)", "Clients Waiting", "Average Days Waiting (Current)", "Median Days Waiting (Current)"),
+    Value = c(clients_assigned, ave_days_waiting_assigned, med_days_waiting_assigned, clients_waiting, ave_days_waiting_current, med_days_waiting_current)
+  )
+  
+  # Round the values in the data frame
+  stats_df$Value <- round(stats_df$Value, round)
+  
+  # Return the data frame
+  return(stats_df)
+}
+
+## Call the function for each df
+## ALWAYS place the HISTORIC df in the first spot and the CURRENT df in the second spot in the function
+
+DevAssessments_Rural <- stats_table(GDD_Rural_H, GDD_Rural_C)
+DevAssessments_Urban <- stats_table(GDD_Urban_H, GDD_Urban_C)
+
+CounsellingTherapy_Rural <- stats_table(CT_H_Rural, CT_C_Rural)
+CounsellingTherapy_Urban <- stats_table(CT_H_Urban, CT_C_Urban)
+
+###........................................................................
+###........................................................................
+###                                                                     ...
+###                    RUN THESE LINES FOR THE STATS                    ...
+###                                                                     ...
+###........................................................................
+###........................................................................
+
+DevAssessments_Rural
+DevAssessments_Urban
+CounsellingTherapy_Rural
+CounsellingTherapy_Urban
+
+
+```
+
+3.  Ensure that the file names match the file names that the code references (see the beginning of the script)
+
+4.  Highlight the entire script (Ctrl-A) and run it.
+
+5.  The numbers you need will appear in the Console window
+
+6.  Add these numbers to the template found at
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Reports\CCN Waitlists 
+
+```
+
+for the current quarter and use the naming convention CCN Waitlist Reporting [FY Start Year]-[FY End Year] Q[Past Fiscal Quarter].xlsx. Update the Report Date accordingly.
+
+7.  Once complete please send to Michelle Gauthier and the Director of Clinical and Client Services Isabelle Chausse (IChausse\@compassne.ca) and CC the Supervisor of System Performance ([nschwabe\@compassne.ca](mailto:nschwabe@compassne.ca){.email}). Before sending your first report please let me (Nick) review first.
+
+## Friends Quarterly Report {#FriendsQuarterly}
+
+These reports are quarterly but follow the normal year (rather than fiscal year). So that Q1 is Jan-March, Q2 is April to June, Q3 is July to September and Q4 is October to December.
+
+This report is due by the end of the month following the end of the calendar quarter (i.e., April 30 for Q1, July 31 for Q2, October 31 for Q3, January 31 for Q4).
+
+The necessary templates and location to store the generated report can be found at
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Reports\FRIENDS
+
+```
+
+1.  Send the FRIENDS Group Tracker_V2 to Lise Longschamp and request that she complete the form for all groups that ran for the last quarter (e.g. between April 1 and June 30, 2023) and ask that she return it by the 15th of the month (or closest reasonable date).
+
+2.  With the information that Lise sends you, fill out the FRIENDS reporting template in the same folder. Save a pdf of the reporting template using the following naming convention: Q[Calendar Year Quarter Number]*[Your First Name All Caps]*[Your Last Name All Caps]\_QR[Calendar Year] .pdf (e.g., Q1_SHAUNA_HERON_QR2023 .pdf)
+
+3.  Save a copy to the same folder
+
+4.  Send a simple email to:
+
+[management\@friendsresilience.org](mailto:management@friendsresilience.org){.email} and attach the report. Be sure to CC the Clinical Manager of FRIENDS ([njohnstone\@compassne.ca](mailto:njohnstone@compassne.ca){.email}), the Manager of System Performance ([ajackson\@compassne.ca](mailto:ajackson@compassne.ca){.email}), and the Supervisor of System Performance ([nschwabe\@compassne.ca](mailto:nschwabe@compassne.ca){.email})
+
+## SAP Data for Board Report {#SAPQuarterly}
+
+These are numbers to be reported to the task on Asana. The following cumulative counts (from beginning FY to end of most recent quarter) need to be reported:
+
+-   The \# Of children served
+-   The \# Exchanged -The \# Of visits
+
+1.  To get these numbers log into the iSAID dashboard with your credentials.
+2.  Under "Reports" select Statistics -- Ministry -- All Stats.
+3.  Select reason "Data Verification"
+4.  Enter the range for the quarter you're interested in
+5.  Run the report
+6.  Download the report
+7.  Input the required numbers into the Asana task. E.g.:
+
+The \# of children served: 37 (from "Total Children Served" in the SAP report) The \# of visits: 70 (from "Total Visits Held") The \# exchanged; 60 (from "Total Exchanges Held")
+
+## Corporate Services Satisfaction Report
+
+1.  Extract fresh data from [Survey Monkey](https://www.surveymonkey.com/summary/JuBXhFbXCyUvCOmADdwOmFF6Yqzr08Wd1LVSczUuVRfX7_2BfEZ179EfoP9J3ZoURj?ut_source=dashboard)
+2.  Analyze Results --\> Save As --\> Export File --\> All Individual Responses --\> XSL--\> `Original View`
+3.  Save to downloads and extract
+4.  Copy the file to: `M:\DATA & REPORTS\Corporate Services\Corproate Services Satisfaction\Corporate Services Satisfaction.xlsx`
+5.  Open the BI dashboard `M:\DATA & REPORTS\Corporate Services\Corporate Services Satisfaction.pbix`
+6.  Refresh dashboard and ensure that filters are properly set to display the most recent completed quarter.
+7.  Publish to Corporate Reporting
+8.  Send email alerts via subscriptions
+
+## OST Report
+
+<https://app.asana.com/0/1203893900634607/1207768653521940/f>
+
+1.  Head to the Data Quality R Project and open the OST report script
+
+2.  You will report each quarter and then the cumulative counts for the following:
+
+3.  To obtain these counts you will download the detailed contacts by activity custom report for the fiscal year to date and then use the quarterly dataframe create in step 01 of the dataclean prep found in the data quality R project folder.
+
+4.  For both, ensure that One Stop Talk and Marie-Eve Poudrier is set as Worker.
+
+5.  The report should contain the cumulative counts/durations as well as the individual counts for the quarter that just passed.
+
+6.  Use the template below
+
+    To: [ephysick\@stridesontario.ca](mailto:ephysick@stridesontario.ca)
+
+    CC: [nschwabe\@compassne.ca](mailto:nschwabe@compassne.ca) [ajackson\@compassne.ca](mailto:ajackson@compassne.ca) [IChausse\@compassne.ca](mailto:IChausse@compassne.ca)
+
+    Hello Erin,
+
+    Below you will find our Q1-Q2 service data for the Francophone OST worker. Please let us know if you need any additional clarification or have any questions.
+
+    **Number of unique individuals served:** XX
+
+    **Number of days waited for service**: 0
+
+    **Number of elapsed days service received by child/youth:** XX
+
+    **Number of hours of direct service:** XX.XX\*
+
+    **Number of children require no further brief service**: Unknown - this data element is based on the youth not accessing or requiring additional service within one month of the session - however, because they are outside our service area we are unable to determine if they called back to OST with a different worker or had to access CYMH services in their region.
+
+    \*Some OST calls do not result in a client file / individual served counted if it is the caregiver of a capable youth or an older youth 18+ and some calls are from repeat clients.
+
+    Best,
+
+    *Signature*

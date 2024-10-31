@@ -1,9 +1,26 @@
 project:
-  type: website
+  type: book
   output-dir: docs
 
-website:
+book:
   title: "Compass Tutorials"
+  author: Office of System Performance
+  date: last-modified
+  page-navigation: true
+  chapters:
+    - index.qmd
+    - part: Routine Reports
+      chapters:
+        - 02-core-reports.qmd
+        - 03-BI-Solution-Data-Quality.qmd
+    - part: Codebooks
+      chapters:
+        - 05-interRAI-code.qmd
+    - part: Other Data Tasks
+      chapters:
+        - 06-Compass-Data-Workflow.qmd
+        - 10-Troubleshooting.qmd
+        - 11-Visualizations-in-R.qmd
 
   sidebar:
     background: "#f9f9f9"
@@ -11,24 +28,28 @@ website:
     pinned: true
     align: center
     style: docked
-    contents:
-      - href: index.qmd
-        text: Welcome
-      - href: filedispo.qmd
-        text: File Disposition
-      - href: closingsummary.qmd
-        text: Closing Summary
-
-style: "docked"
+    collapse-level: 2
 
 format:
   html:
     theme: [cosmo, theme.scss]
     # css: styles.css
     toc: true
+    toc-depth: 3
     code-copy: true
     code-overflow: wrap
     lightbox: true
+    warnings: false
+    messages: false
+    number-sections: false
+    embed-resources: true
+    other-links:
+      - text: Leave us feedback
+        href: https://www.research.net/r/ManualFeedback
+  CompassTypst-typst:
+    keep-typ: true
+
+
 
 page-footer:
   right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
@@ -36,4 +57,5 @@ page-footer:
 
 execute:
   freeze: auto
+  cache: true
 

@@ -1,0 +1,15 @@
+{
+  "hash": "989fce5643fa98b32e5826fc1ea925fb",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Introduction\n\nIn using this manual, you will need to adapt code in earlier sections (e.g. the Pulling Data chapter) to match your own organizations unique file/directory structure.\n\nThe interRAI code in this book is not setup to run from the manual itself, however you can copy and paste code as needed to add to your own script or you can utilize the full interRAI script with all calculations included in the manual which is available here [add a link here!]\n\n## Packages Required {.unnumbered}\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(readr)\nlibrary(dplyr)\nlibrary(readxl)\nlibrary(data.table)\nlibrary(magrittr)\nlibrary(stringr)\nlibrary(sjmisc)\nlibrary(tidyverse)\nlibrary(Hmisc)\nlibrary(kableExtra)\nlibrary(sjlabelled)\nlibrary(summarytools)\nlibrary(DT)\nlibrary(kableExtra)\nlibrary(gt)\n```\n:::\n\n\n\n::: puzzle\nAny other analyses specific packages will be included in appropriate section.\n:::\n\n         \n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

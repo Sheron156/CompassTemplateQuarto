@@ -1,0 +1,585 @@
+# Core Reports {-}
+
+# Report Timelines {#ReportTimelines}
+
+All of the reports in this table have a corresponding tutorial (see TOC headings Core Weekly Reports, Monthly Reports and Quarterly Reports to the left). Here is where you'll find detailed, step by step instructions.
+
+For a pdf version of the table, right click the Routine Report pdf below this table and save to disk.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(dplyr)
+library(readxl)
+library(DT)
+library(gt)
+library(downloadthis)
+library(gtExtras)
+ReportDictionary <- read_excel("M:/DATA & REPORTS/Routine Reports/ReportDictionary.xlsx")
+
+#datatable(ReportDictionary, fillContainer = FALSE, width=500)
+table<-ReportDictionary %>% gt() |>
+  cols_width(
+    Report ~ px(300),
+    #`Data Destination` ~ px(200),
+    `Purpose`~px(400)) %>%
+  opt_interactive(
+  active = TRUE,
+  use_pagination = TRUE,
+  use_pagination_info = TRUE,
+  use_sorting = TRUE,
+  use_search = TRUE,
+ # use_filters = TRUE,
+  use_resizers = TRUE,
+  use_highlight = TRUE,
+  use_compact_mode = TRUE,
+  use_text_wrapping = FALSE,
+  use_page_size_select = TRUE,
+  page_size_default = 10,
+  #page_size_values = c(10, 25, 50, 100),
+  #pagination_type = c("numbers", "jump", "simple")
+) %>% tab_header(
+  title="Weekly, Monthly and Quarterly Reports Summary",
+  subtitle="Click report name for step by step instructions. Download the entire table via button below"
+)|>
+ # cols_hide(columns = trim) %>%
+  opt_stylize(style=6, color="cyan")|>
+  tab_footnote(
+    footnote = "Click the download button to save the table to your drive.",
+    locations = cells_body(columns = 1, rows = 1)
+  ) %>% tab_source_note(ReportDictionary %>%
+                        download_this(
+                          output_name = "ReportTimelines",
+                          output_extension = ".xlsx",
+                          button_label = "Download Excel",
+                          button_type="primary"
+                        )
+                        ) %>% sub_missing(
+  columns = everything(),
+  rows = everything(),
+  missing_text = "---"
+) |>
+  fmt_url(columns = 'Report')
+
+table
+
+```
+
+**Right click to save the file to disk.**
+
+[![](reference/CompassTypst.pdf)](reference/CompassTypst.pdf)
+
+# Core Weekly Reports {#WeeklyReports}
+
+The following outlines how to pull the **weekly core data** for the BI dashboard. The files should be pulled every Monday morning and placed in their corresponding folder on the Master drive (see below).
+
+## ASEBA Reports {#ASEBAWeekly}
+
+Head to <https://aseba-web.org/SignIn?ReturnUrl=%2f> and log in.
+
+Click Clients on left (above list of clients)
+
+Click Directory at the top and Export Data.
+
+Select Scored Data as file type --\> Next --\> Excel --\> Next --\> No
+
+Once loaded, click Export and save file to (overwriting previous file):
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Data\ASEBA
+
+```
+
+The following core reports require you to be logged into EMHware and have clicked **Reports** from the global menu.
+
+[![](images/reports.PNG){width="295"}](https://compass.emhware.ca/reports/)
+
+::: fyi
+To avoid saving files in places they shouldn't be, we recommend seting your browser to *prompt* when a download is ready so that you can select specifically where you would like new downloads to go (rather than to the downloads directory). In Chrome, click the three vertical dots at the top right of the browser --\> settings --\> Downloads --\> "Ask where to save each file before downloading"
+:::
+
+## Detailed Program History and Client Data {#ProgramHistoryWeekly}
+
+1.  Under EMHware Report Suite dropdown select **Custom Reports**
+
+2.  Select **Detailed Program History and Client Data** from list
+
+3.  Select **All Programs** then **deselect the following programs by holding CTRL while clicking**:
+
+    a.  Administration Support
+
+    b.  ISSP (this one may not be in the list)
+
+    c.  Privacy Office
+
+    d.  Research
+
+    e.  Resource Program
+
+    f.  Default
+
+    g.  CFC -- Mental Health Referral
+
+4.  We want all data for clients from 2012 to present but we can only export 3 years at a time. We use **Waiting List Start** and **Waiting List End** fields to input our dates.
+
+    [![](images/DetailedProgramHistoryCore.PNG)](https://compass.emhware.ca/reports/report.php?aCd=CFC_DPHCD&aReturnToPage=6)
+
+5.  **Start with 01-01-2012 and end with 12-31-2014 and continue in 3 year intervals**. Common intervals:
+
+    ![](images/DetailedProgramHistoryCore-2.PNG)
+
+6.  Click **Run** (icon top right) once dates are selected and wait.
+
+7.  When spinny thing stops, click **CSV export** (just below selection fields but above data---often have to scroll really far to the right)
+
+8.  Save to (overwriting the files you pulled last week)
+
+::: fyi
+It is not unusual for EMHware to crash between intervals, forcing you to fill out the form again. You can reload between intervals to avoid this, or cross your fingers that it will work this week
+:::
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Data\Program Histories\Detailed Program History and Client Data
+
+```
+
+10. Pull next interval and so on until you reach current interval
+
+11. Keep pulling intervals until you're up to date with today at which point you'll remove the Waiting List End date entirely by clicking the no date icon.
+
+12. Ensure that the files in the folder are ONLY the files you pulled today and that your range includes data from Jan 1, 2012 until today.
+
+## Schools and Schoolboard Data {#SchoolboardWeekly}
+
+Pulls most recent school information.
+
+1.  From EMHware dropdown select ***"Client Lists"***
+
+2.  Then from "Client lists" drop down select ***Educational/School Status -- Custom***
+
+3.  Set ***start date to April 1, 2021*** and end date **one year from the day you're pulling the report** to ensure you collect information for Access / Intakes that are scheduled in the future.
+
+4.  Export and save to (overwriting existing file):
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Data\School Data
+
+```
+
+## Case Data {#CaseDataWeekly}
+
+1.  Under EMHware Report Suite dropdown click **Custom Reports**
+
+2.  Select **"Case Data Data Extract in Column Format"**
+
+3.  Clear Start and End Date by clicking the "Reset" button (top right)
+
+4.  Under **Case Data Type** pull the following:
+
+<!-- -->
+
+-   **Closing summary**
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Data\Closing Summaries 
+
+```
+
+## interRAI ChYMH Data {#ChYMHWeekly}
+
+1.  Download the [interRAI](https://ca-central-1.quicksight.aws.amazon.com/sn/analyses/5783a9b3-a92e-43dd-81fa-a40867fb97b6/sheets/292df0ff-1f65-4822-be5f-ad347dfcf1b5) dataframe from QuickSight by clicking on the interRAI tab in the CORe Exports and choosing download as CSV
+
+    ![](images/Capture.PNG)
+
+2.  **Files are saved to the M drive (overwriting corresponding original file):**
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Data\COREv2\interRAI.csv
+
+```
+
+3.  Click the Clients tab in Quicksites and download the client dataframe:
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Data\COREv2\Clients.csv
+```
+
+## Non-Authenticated interRAI Assessments {#NonAuthWeekly}
+
+1.  If you are completing this step immediately following the previous step, hop to step 2. Otherwise, click the **ChYMH Ontario** button at top of EMHware
+
+2.  Now under Authentication choose **"Non-authenticated records only"**
+
+3.  Start date set to **Jan 01 2008** and End Date to be two months in the past ending on a Sunday (to give clinicians more time to complete them them).
+
+4.  Click **Search** and this time export by clicking the usual **export CSV button** (should be much faster).
+
+5.  File is saved to (overwriting original file)
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Data\interRAI\Non-Authenticated interRAI Axs
+
+```
+
+## Unauthenticated Records (Records Audit) {#RecordsAuditWeekly}
+
+This will report assessments that are late being authenticated.
+
+1.  From the **Reports** dashboard click **"Client Lists"** from the EMHware dropdown
+
+2.  From the Client Lists dropdown select **Records Audit** from the list
+
+3.  **Leave Start Date blank** and choose an **End Date that is one month back** (5 weeks, ending on a Sunday).
+
+4.  Click checkbox next to **"Include Case Notes"** and **"Include Case Data"** and **"Include Contacts"**
+
+5.  Select **"All Programs"**
+
+6.  Under "Authentication" dropdown select **"Non-authenticated records only"**
+
+    ![](images/RecordsAudit.PNG)
+
+7.  Click **Run** and wait.
+
+8.  Export the CSV to (overwriting the Records Audit file):
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Data\Unauthenticated Records
+
+```
+
+## Contact Data - Time Entry {#TimeEntryWeekly}
+
+1.  Under EMHware Report Suite dropdown click **Contact Lists**
+
+2.  Then choose **Detailed Contacts by Activity Custom Report** from list
+
+3.  Select **"All programs"**
+
+4.  This to be pulled month by month (big file). **First pull previous month and then pull current month** (up to the Sunday before current day).
+
+5.  Click Run (top right) and wait
+
+6.  Once ready, to export click CSV export (just below selection fields but above data---often have to scroll to the right)
+
+    ![](images/csvexport.PNG)
+
+```{r, eval=FALSE}
+
+M:\Data & Reports\Clinical & Client Services\Clinical Data\Time Entry\
+
+```
+
+8.  If there's already a file there for that month, just overwrite it. If not, start a new file with the same naming convention but new month w/year.
+
+## Action Log {#ActionLogWeekly}
+
+1.  Open Action Log Excel document at:
+
+```{r, eval=FALSE}
+
+M:\Data & Reports\Clinical & Client Services\Clinical Data\ 
+
+```
+
+2.  Add today's date and "Updated Data", unless anything was changed all other lines are the same as previous weeks.
+
+3.  Save.
+
+## PowerBI Data Refresh {#BIRefreshWeekly}
+
+1.  Open the **PowerBI Clinical Operations Report (CORe**) at:
+
+```{r, eval=FALSE}
+
+M:\Data & Reports\Clinical & Client Services\Clinical Reports\Clinical Operations Report (CORe)
+
+```
+
+2.  Once it is open (it can take a while), click **Enable Script Visuals,** then **Refresh Data** and wait (very long wait \>20 mins at times)
+
+    ![](images/Refresh.PNG)
+
+    ![](images/powerbirefresh.PNG){width="563"}
+
+3.  If it completes without error or only 1-2 non-critical errors, move to next step. If you run into a problem, see the troubleshooting subsection below.
+
+4.  Click **Publish** and **Save** (then wait)
+
+5.  In the popup select **Clinical Operations Report (CORe) workspace**
+
+6.  Click **Replace** (and wait)
+
+7.  Next click the link PowerBI offers once it is published to log into the online PowerBI dashboard and double check that everything is loading properly.
+
+### Troubleshooting issues with the PowerBI refresh {#TroubleshootWeekly}
+
+1.  Copy the error code that powerBI produces and add it to a blank text document for reference (you can usually click into the window and CTRL-C to copy and then paste into an empty text doc).
+
+Below is an example of a PowerBI refresh gone wrong. The error log:
+
+```{r, eval=FALSE}
+
+Time_Entry
+Loading blocked by failures with other queries.
+zStaff
+Loading blocked by failures with other queries.
+zPrograms
+Loading blocked by failures with other queries.
+zGender
+Loading blocked by failures with other queries.
+zActivities
+Loading blocked by failures with other queries.
+zDefinitions
+Loading blocked by failures with other queries.
+zMethods
+Loading blocked by failures with other queries.
+PrgrmData
+Loading blocked by failures with other queries.
+zProgramList
+Loading blocked by failures with other queries.
+zClientMetrics
+Loading blocked by failures with other queries.
+Measures Table
+Loading blocked by failures with other queries.
+T_Table
+Loading blocked by failures with other queries.
+Narratives
+Loading blocked by failures with other queries.
+zHolidays
+Loading blocked by failures with other queries.
+zAgesTable
+Loading blocked by failures with other queries.
+FileAudits
+Loading blocked by failures with other queries.
+interRAI
+ADO.NET: R script error. Attaching package: 'dplyr' The following objects are masked from 'package:stats': filter, lag The following objects are masked from 'package:base': intersect, setdiff, setequal, union Attaching package: 'data.table' The following objects are masked from 'package:dplyr': between, first, last New names: â€¢ `` -> `...4` â€¢ `` -> `...5` â€¢ `Chart Number` -> `Chart Number...7` â€¢ `Gender` -> `Gender...9` â€¢ `` -> `...10` â€¢ `` -> `...11` â€¢ `` -> `...12` â€¢ `Gender` -> `Gender...15` â€¢ `Chart Number` -> `Chart Number...16` â€¢ `` -> `...18` â€¢ `` -> `...19` â€¢ `` -> `...20` â€¢ `` -> `...21` â€¢ `` -> `...22` â€¢ `` -> `...23` â€¢ `` -> `...24` â€¢ `` -> `...25` â€¢ `` -> `...26` â€¢ `` -> `...27` â€¢ `` -> `...28` â€¢ `` -> `...29` â€¢ `` -> `...30` â€¢ `` -> `...31` â€¢ `` -> `...32` â€¢ `` -> `...33` â€¢ `` -> `...34` New names: â€¢ `iP22a1` -> `iP22a1...452` â€¢ `iP22a2` -> `iP22a2...453` â€¢ `iP22a1` -> `iP22a1...625` â€¢ `iP22a2` -> `iP22a2...626` There were 19 warnings (use warnings() to see them) Warning message: Using an external vector in selections was deprecated in tidyselect 1.1.0. â„¹ Please use `all_of()` or `any_of()` instead. # Was: data %>% select(keep1_1) # Now: data %>% select(all_of(keep1_1)) See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>. Warning message: In as.POSIXlt.POSIXct(x, tz = tz) : unknown timezone '%m/%d/%Y' Warning message: In as.POSIXlt.POSIXct(x, tz = tz) : unknown timezone '%m/%d/%Y' Warning messages: 1: One or more parsing issues, call `problems()` on your data frame for details, e.g.: dat <- vroom(...) problems(dat) 2: One or more parsing issues, call `problems()` on your data frame for details, e.g.: dat <- vroom(...) problems(dat) 3: One or more parsing issues, call `problems()` on your data frame for details, e.g.: dat <- vroom(...) problems(dat) 4: One or more parsing issues, call `problems()` on your data frame for details, e.g.: dat <- vroom(...) problems(dat) Error in as.POSIXlt.character(x, tz, ...) : character string is not in a standard unambiguous format Calls: [<- ... as.POSIXct.default -> as.POSIXct -> as.POSIXlt -> as.POSIXlt.character Execution halted
+interRAIValueCodes
+Loading blocked by failures with other queries.
+School
+Loading blocked by failures with other queries.
+Closing Summary
+Loading blocked by failures with other queries.
+interRAI Possible Vals
+Loading blocked by failures with other queries.
+interRAI Scale Names
+Loading blocked by failures with other queries.
+Unauthenticated Records
+Loading blocked by failures with other queries.
+Crisis/CAMHP
+Loading blocked by failures with other queries.
+ASEBA
+Loading blocked by failures with other queries.
+Clients
+Loading blocked by failures with other queries.
+DemoFilters
+Loading blocked by failures with other queries.
+Crisis/CAMHP Asana
+Loading blocked by failures with other queries.
+
+
+```
+
+::: fyi
+To see dependencies between queries (which can help solve where the problem is), click view and dependencies in the power query editor
+:::
+
+2.  If you scroll through the Refresh Error Code and see a problem with the interRAI script (as in the example above), it is advisable to open the script in R and run it from there. You can find the source code in the scripts folder in the root of this data-manual project. Be sure to open the most recent version of the script. As of writing this tutorial today, it would be VIII. Open it then select all (CTRL-A), and Run it.
+
+    ![](images/OriginalinteraiScript.PNG){width="439"}
+
+At times, there are updates that can cause R packages to stop working which causes the code to fail. When you run it in R you can see exactly where the code is failing and hopefully correct it. In the case of the above error message, an R package was no longer working as intended so I simply found another package that would perform the same task, replaced the problematic R code in PowerBI and the problem was solved.
+
+If you need to replace some R code be sure to correct it in the original R script *and* in the powerBI R query. You can find the BI version of the script in the Powerquery list, called "ChYMH" at the bottom. If you click on src for this query you can see the code and replace it here.
+
+![R interRAI script location in PowerBI](images/RScriptinPowerBI.PNG)
+
+::: fyi
+When you save your changes to the script you opened in R, save it as a new script with a new version e.g. from our example next version would be IX. DO NOT SAVE OVER THE OLD SCRIPT.
+:::
+
+If the script runs as normal in R, the problems is at some other level.
+
+**Some other common problems:**
+
+-   An extra file or incorrect report saved to a data folder. Check the folders of all of the reports you downloaded to make sure everything that should be there is there, and most importantly, that there aren't any files that shouldn't be there. Its easy to save a non-related file to one of the data folders by mistake if you're working on something else while pulling the files (which I do often!). A random file in any of the folders will cause errors with the PowerBI query.
+
+-   A problem with a reference table (expand on this later)
+
+If you understand PowerQuery (kudos to you!! :)), it can help to run through the various queries that powerBI uses to build the dash one by one. This way, you can find exactly where the query is breaking and fix it there.
+
+If all else fails, contact your supervisor with the error code. This is often the best next step if the above steps fail.
+
+Make sure you don't have any of the files loaded in R! This can also throw errors.
+
+# Monthly Reports {#MonthlyReports}
+
+## File Audits {#FileAudits}
+
+This task will be completed monthly. Accreditation audits must be completed at the beginning of each fiscal quarter (see below), while staff focused audits occur in the months between (Feb, Mar, May, Jun, Aug, Sep, Nov, Dec). The audit targets are calculated based on the last fiscal year's numbers. You'll find an R Project called "File Audits" that includes a script that will calculate targets (this only need to be calculated once a fiscal year). There is also a script for pulling a randomized selection of files based on those targets for the accreditation audit and for the staff focused audits. For specifics see below.
+
+\*\*Downloading fresh Audit record file
+
+-   use Case Data Data Extract in Column Format form
+-   select all programs
+-   Case Data Type File Audit
+-   select all File AUdit Info (top section) under results field list
+-   set date 01-01-2020 to today
+
+### CCA / Accreditation File Audits {#CCAAudits}
+
+**Timing: Jan, Apr, Jul, Oct**
+
+In the R project you'll find a script and several R Markdown documents and some files:
+
+-   YearlyTarget_Script.R is the script to determine targets (this is completed once per year)
+
+-   FileAuditScript is the main script for pulling new files based on audits remaining (should be an object called "RemainingTargets" that will include the original targets and the audits conducted each month)
+
+Be careful, the updating of targets section of the script above will need variable name changes and updates--don't just run the script blindly.
+
+Once you have the quarterly final audit dataframe, send to Nick so that he can evenly distrbute across clinicians. When he is finished he will send you a table with assigned clinican for you to enter into Emhware.
+
+To add the audits, go to the specific worker's supervision file and add the audit.
+
+\*\* ENSURE YOU UPDATE THE REMAINING TARGETS TABLE EACH QUARTER AND SAVE IT!! You will based next quarter's targets on this (see bottom of FileAuditScript.) At some point we'll automate this better.
+
+```{r}
+#readRDS(Audit, "Yearly_Accreditation_AuditTargets_2024.rds") <- the yearly targets. You will base your pulls on this
+#readRDS("Q3_Audits") <- each quarter make sure to save the df of files that were pulled
+
+#readRDS("RevisedTargets.rds") <- make sure to revise your leftover targets each quarter
+
+```
+
+Need to audit 2% of the total unique clients who received services in the previous fiscal year usually (\~2,000 \* 2% = 40 / year = 10 / quarter = 2-3/supervisor) Minimally 1 active and 1 closed file per program 1 closed file should be audited for every 2 active files Closed files are considered eligible if discharged from the agency within 12 months of the file extraction date Active files are considered eligible if the file was opened no less than 28 days prior to the file extraction date (for non mindSPACE/Brief Services programs) Files are only considered eligible if they have not been audited within the past 2 years Otherwise, files should be selected randomly The active / last worker
+
+### Staff Focused File Audits {#StaffAudits}
+
+**Timing: Feb, Mar, May, Jun, Aug, Sep, Nov, Dec**
+
+Each staff should have an equal likelihood of being selected (i.e., first randomly select 3 files from each staff) Each Supervisor should have 5 files to audit / month
+
+You'll find an R script called "StaffFocused_Audits.R"--you will run this making sure you refresh the already audited files report from emhware (see above) by adding to the Data folder off the project root.
+
+## Case Review and Psych Consult List {#CaseReviewMonthly}
+
+Previously you would open the Excel worksheet: Case Review Selection v3 at
+
+```{r, eval=FALSE}
+
+M:\DATA & REPORTS\Clinical & Client Services\Case Reviews
+```
+
+Now, you will open the Case Review Psych Consult Review R Project and run the CaseReview.Rmd Markdown report. Before running it, however:
+
+1.  Run a fresh [Program History Extract](https://compass.emhware.ca/reports/report.php?aCd=program_history_dump&aReturnToPage=3) for all services.
+
+    -   Select all programs excluding default, admin, privacy office, research, etc.
+
+    -   Check off receiving services only box.
+
+    -   Run and place in the data file of the Case Review R Project
+
+2.  Run an [Educational/School Status - Custom](https://compass.emhware.ca/reports/report.php?aCd=educational_status_custom&aReturnToPage=5) Report
+
+    -   Start date jan 1 2020
+
+    -   place in the data file of the Case Review R Project, saving over Educational School Status Custom (3)
+
+3.  Run [**Case Data Data extract by column**](https://compass.emhware.ca/reports/report.php?aCd=CaseDataDataColumns&aReturnToPage=7) report (for completed consults)
+
+    -   select "psychological consultation report" form (should be ones created in 2023 if its the right extract).
+
+    -   place in the data file of the Case Review R Project, saving over Case Data Data Extract in Column Format (3)
+
+4.  Run same [**Case Data Data extract by column**](https://compass.emhware.ca/reports/report.php?aCd=CaseDataDataColumns&aReturnToPage=7) (for case reviews past--might be case review rec forms or something)
+
+    -   place in the data file of the Case Review R Project, saving over Case Data Data Extract in Column Format (4)
+
+5.  Make sure that the filenames in the R document match the filenames you just placed in the folder
+
+6.  Run the report.
+
+7.  Send out to **Nick, Alana, Michelle G. and all Supervisors** (see email template)
+
+    **Subject:** Supervisor Team Meeting: Psych Consults and Case Reviews
+
+    **Send to:** Alana Jackson; Ali Skakoon; Julie Rainville; Kara Spencer; Krista Cotie; Michelle Gauthier; Nicholas Schwabe
+
+    **Text:**
+
+    Prior to next meeting please review the attached list to determine if any clients are suitable for a psychological consult. There are no files eligible for case review this month.
+
+    MAKE SURE TO ADD A COPY OF THE REPORT TO M:\DATA & REPORTS\Clinical & Client Services\Case Reviews
+
+## Training Feedback Monthly Report {#TrainingFeedbackMonthly}
+
+This is a monthly reoccurring report (found on Asana)
+
+1.  Head to SurveyMonkey and login
+
+2.  Under My Surveys you'll complete the following for each of, i. Training Feedback Form ii. Trauma 101 Training Survey iii. CPI Nonviolent Crisis Intervention Training Evaluation Form iv. safeTalk Training Survey
+
+3.  For each one, type part of the name in the search bar (top right), then click the Analyze button (little bargraph), then Save As → Individual Responses → Export File → CSV → Original View (No Rules Applied) and click Export.
+
+4.  Wait a few moments then click the download button (top right) that will appear once the file is ready.
+
+5.  Save to your download folder (this ensures it will be deleted eventually) to unzip the package.
+
+6.  Once unzipped, place the CSV file in its correct folder on
+
+```{r, eval=FALSE}
+
+M:\\DATA & Reports\Training
+
+```
+
+overwriting the original files (e.g. Training Feedback Form.csv goes in the Training Feedback Data folder). Complete this for all surveys listed above.
+
+7.  Next open Training Feedback Form Dashboard (Power BI desktop file) in same location
+
+8.  Refresh data, double check that it ran correctly then click publish and select the Misc Reports Workspace
+
+9.  Double check that the dashboard updates as expected
+
+10. Click on the "Subscribe to Report" button and then click the "play" button to send out to email subscription list
+
+11. Mark the task complete in Asana
+
+## Youth Hub Monthly Report {#YouthHubMonthly}
+
+1.  Log into Dacima software
+
+2.  OPen menu at top left and go to Extraction --\> Extraction List
+
+3.  Then select Compass Data Dump - go to pencil to modify report
+
+click extract
+
+download extraction
+
+okay
+
+save to Data & Reports / Clinical & Client SErvices / Clinical Data / YWH Data / HUb.zip
+
+Open zip
+
+Extract all
+
+Note: good pdfs / codebooks in support folder
+
+Open the dash at M:\DATA & REPORTS\Clinical & Client Services\Clinical Reports
+
+YWHO Report
+
+Refresh
+
+Upload to Clinical Reports

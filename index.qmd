@@ -1,8 +1,9 @@
 ---
-title: "My Report"
-subtitle: "Put a subtitle here"
+title: "How to use this guide"
+subtitle: "Data Analyst Tasks and Utilities"
 author: "Office of System Performance"
 date: last-modified # adds today's date
+number-sections: false
 ---
 
 ```{r setup, include=FALSE}
@@ -20,9 +21,12 @@ library(unikn)
 
 ```
 
-# How to use the guide
+# How to use this guide {-}
 
 This template will allow you to create a Compass standard html report. If you would like multiple tabs, ensure the tabset code above (in the curly parentheses) is placed after a main heading, this will ensure that headings below it (preceded by '\##' will be the tabs)
+
+
+         
 
 ::: panel-tabset
 
@@ -69,7 +73,14 @@ cols <- usecol(my_pal, n=15)
 cols
 ```
 
-## Some other info
-:::
+## Data Quality
+
 
 ![](images/dataquality_legend.png)
+## Templates
+
+quarto use template Sheron156/compasstypst
+
+quarto use template Sheron156/CompassTemplateQuarto
+
+:::

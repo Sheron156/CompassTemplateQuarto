@@ -1,0 +1,323 @@
+---
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# How Tos {.unnumbered}
+
+# Adding Quarterly/Monthly File Audits to emhware
+
+1.  Type in name of worker
+
+2.  Add new case data
+
+3.  Select Supervision
+
+4.  Set worker to supervisor
+
+5.  Set type to File Audit
+
+Add CIS #, Whether the file is active or discharged (closed), the name
+of the program
+
+Check off CCA Audit and file selection date. Under other workers add all
+workers within the last two years that are on the client file
+(regardless of program). Only add workers, not supervisors/managers
+
+```{r}
+library(tidyverse)
+```
+
+# Adding new workers to emhware for supervisor notes
+
+1.  From main emhware dashboard click green + sign at top right to enter
+    new client
+
+    ![](images/NewClients.PNG)
+
+2.  Select client type "Worker" from the drop down
+
+3.  Look up the worker in the Reference excel document to obtain their
+    ID:
+
+```{r, eval=FALSE}
+M:\DATA & REPORTS\Clinical & Client Services\Clinical Data\ASEBA
+```
+
+3.  Add leading zeroes to make it 4 digits if necessary. E.g. ID of 342
+    would be entered 0342 into emhware ID field.
+
+4.  Add DOB 1990-01-01 for all workers
+
+5.  Gender, Indigenous Status, Preferred language, highest level of
+    education, citizenship status, ethnicity and mother tongue should
+    all be set to Don't Know. Click save.
+
+6.  Create lockbox by clicking on the name at top left and selecting
+    lockbox from the dropdown. Select **"Deny all workers from this
+    client"** from the drop down then click the + sign to add those
+    approved to see the file. There is a list of approved staff for this
+    list in the reference table.
+
+-   Alana Jackson
+
+-   Ali Skakoon
+
+-   Chantal Lafleur
+
+-   Jen P
+
+-   Kara S
+
+-   Krista C
+
+-   Natalie J
+
+-   Penny
+
+-   Tracy B
+
+-   Nick
+
+-   Shauna
+
+-   Worker
+
+7.  Next create a program history by clicking the workers name again and
+    selecting **program history** from the dropdown. Click the green +
+    sign at top right.
+
+8.  Program should be **Supervision.** The little dropdown next to it
+    should be Clinical. **Worker** should be the worker's supervisor.
+    Referral source = self. Presenting issue = Other. Receiving Services
+    date today. Then click save.
+
+# Submitting New Form Requests to EMHWare Support
+
+New Form tasks are tracked in an [Asana
+project](https://app.asana.com/0/1150008016817939/1150008016817939) with
+the same name.
+
+When a form is ready to be submitted to EMHware, you will find it under
+the Needs EMHware Submission & Review heading. Submissions that have
+already been completed will have a "Submitted" flag in the EMHware
+submission column. If it is ready for submission this field will be
+blank.
+
+To submit the forms you will head to [EMHware
+support](https://help.emhware.ca/hc/en-us) page and click
+`submit a request`.
+
+You will upload both the French and English Word docs from the Asana
+task (if both language versions are present) along with a pdf that codes
+what type of field each one should be.
+
+Some general guidelines for completing the specifications pdf:
+
+-   Open the english version form.
+
+-   Using the following color coding code the form with your
+    specifications. You can also use comments to identify auto-populate
+    fields, repeating fields and signature or any other specialized
+    fields. If you're unsure of what type of field you should specify,
+    take a look at some existing forms or consult with Nick or Shauna
+    for best practice.
+
+-   Once complete, you can add a legend and save as pdf. You will send
+    the pdf alongside the two word documents with a little writeup:
+
+    *Hi there,*
+
+    *We need a new form created in EMHware in English and French based
+    on the attached forms:*
+
+    -   ***Request for Trauma Psychoeducation Group (V24.09)***
+
+    -   ***Demande pour le groupe de psychoéducation en traumatisme
+        (V24.09)***
+
+    ![](images/Capture-01.PNG)
+
+# Compass Branding
+
+Compass Colours (open in R or copy and paste the hex codes below to your
+own Rmarkdown doc).
+
+```{r}
+
+CompassColours <- c('#F16823','#FDB816','#BED62F','#DEE48C','#8CD3D6','#4AB8C1','#286169','#133438')
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(scales)
+print(CompassColours)
+show_col(CompassColours)
+
+```
+
+# Compass R Markdown Template
+
+To install the Compass Markdown Template:
+
+```{r, eval=FALSE}
+
+# install.packages("remotes")
+remotes::install_github("sheron156/markdowntemplate")
+
+library(CompassTemplate)
+
+```
+
+Then select New File, R Markdown, from Template and select the Compass
+Template.
+
+# Other Data Related Tasks
+
+## Wrangling data with R
+
+To grab all detailed program history data from server
+
+```{r}
+
+# Grab Detailed Program History data
+
+PH <- list.files(path = "M:/DATA & REPORTS/Clinical & Client Services/Clinical Data/Program Histories/Detailed Program History and Client Data",  # Identify all CSV files
+                       pattern = "*.csv", full.names = TRUE) %>% 
+  map_df(~read_csv(., col_types = cols(.default = "c")))
+
+
+
+```
+
+To grab all contact data from server
+
+```{r}
+
+# Grab Contact Data
+
+CD <- list.files(path = "M:/DATA & REPORTS/Clinical & Client Services/Clinical Data/Time Entry",  # Identify all CSV files
+                       pattern = "*.csv", full.names = TRUE) %>% 
+  map_df(~read_csv(., col_types = cols(.default = "c")))
+
+```
+
+## Building Models
+
+DataScience and tidymodels online textbook:
+<https://www.tmwr.org/tidyverse>
+
+```{r}
+
+```
+
+## Working with emhware dates
+
+The hardest part.
+
+## Working with Projects
+
+## Linking a project to Github
+
+### What is Github?
+
+```{r, eval=FALSE}
+
+#https://medium.com/@delucmat/how-to-publish-bookdown-projects-with-github-actions-on-github-pages-6e6aecc7331e
+# Make a new branch with no parents and disconnected from all other branches
+git checkout --orphan gh-pages
+
+# Remove all files from the working tree
+git rm -rf .
+
+# Make an empty commit
+git commit --allow-empty -m 'Initial gh-pages commit'
+
+# Pushing to remote will create gh-pages branch on the remote repo
+git push origin gh-pages
+git checkout master
+
+# force changes on llocal to repo server
+
+git push -f origin master
+
+```
+
+![Github commit local/remote hierarchy](images/githierarchy.png)
+
+## Data Resources
+
+Excellent census dashboard for City of Greater Sudbury
+
+<https://sudbury.maps.arcgis.com/apps/MapSeries/index.html?appid=2624ebe80fcc435d993f446d66920f51>
+
+### Indigenous specific data
+
+There may be some more information of interest here: [Indigenous peoples
+(statcan.gc.ca)](https://www150.statcan.gc.ca/n1/en/subjects/indigenous_peoples)
+
+Here is some data specific to the 2 First Nation communities excluded
+from the data above:
+
+<https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/ipp-ppa/details/page_Download-Telecharger.cfm?Lang=E&DGUID=2021A00053552051&SearchText=Whitefish&HP=0&HH=0&GENDER=1&AGE=1&RESIDENCE=1&TABID=1>
+
+A profile specifically on Atikameksheng Anishnawbek (Whitefish Lake) can
+be found here:Profile table: Whitefish Lake 6, Indian reserve \[Census
+subdivision\], Ontario,Indigenous Population Profile, 2021 Census of
+Population (statcan.gc.ca) Focus on Geography Series, 2021 Census -
+Whitefish Lake 6 (Census subdivision) (statcan.gc.ca)
+
+And Wahnapitae: Profile table: Wahnapitae First Nation \[First Nation or
+Indian band or Tribal Councilarea\], Ontario, Indigenous Population
+Profile, 2021 Census of Population (statcan.gc.ca) Focus on Geography
+Series, 2021 Census - Wahnapitei 11 (Census subdivision) (statcan.gc.ca)
+
+## StyleSheets
+
+## Excel Help
+
+Can't help you, sadly.
+
+## Power BI Help
+
+## Updating the data manual
+
+Until the data manual project is in a central location, its best to ask
+Shauna for any changes you'd like to see
+[sheron\@compassne.ca](mailto:sheron@compassne.ca){.email}
+
+## Handy functions
+
+Flow Charts and Decision Trees:
+<https://www.andreashandel.com/posts/2022-06-11-flowdiagramr-exploration/>
+
+## Handy scripts
+
+## Handy Tutorials
+
+Teaching stats interactively with webR
+
+<https://nrennie.rbind.io/talks/rss-conference-teaching-webr/>
+
+Intro to machine learning with tidymodels (all of her tutorials are
+great)
+
+<https://nrennie.rbind.io/talks/r-pharma-2023-tidymodels/>
+
+<https://r4ds.hadley.nz/data-visualize>
+
+GGflowchart
+
+<https://nrennie.rbind.io/talks/ggplot2-building-ggflowchart/>
+
+## Definitions
+
+| Term | Meaning    | Usage                                                                                                          |
+|------|------------|----------------------------------------------------------------------------------------------------------------|
+| df   | data frame | refers to a dataframe. Usually an R dataframe but it is also used to refer to an excel csv (also a dataframe). |
+|      |            |                                                                                                                |
+|      |            |                                                                                                                |
+
+: Definitions

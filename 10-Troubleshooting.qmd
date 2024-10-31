@@ -1,0 +1,13 @@
+# Troubleshooting {-}
+
+# Troubleshooting
+
+To be completed someday soon!
+
+## Date problems
+
+## R problems
+
+## Github problems
+
+## Excel problems

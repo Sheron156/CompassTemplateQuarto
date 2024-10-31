@@ -1,0 +1,245 @@
+# Visualizations in R {-}
+
+# Necessary Packages
+
+```{r}
+
+library(tidyverse)
+library(ggplot2)
+library(effects)
+library(jtools)
+library(sjPlot)
+
+```
+
+## Using ggplot2 
+
+### Scatterplots
+
+For use with at least two continuous variables
+
+```{r}
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+# Adding a class categorical value
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color=class))
+
+# adding labels
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color=class)) +
+  labs(x = "engine displacement (L)",
+       y = "highway fuel efficiency (mpg)",
+       color = "type of vehicle",
+       title = "Fuel Economy as a Function of Engine Size",
+       subtitle = "Fuel Efficiency and Engine Size are Inversely Related",
+       caption = "Data obtained from fueleconomy.gov")
+
+```
+
+### Trend Curves
+
+```{r}
+
+## two continuous and a categorical 
+
+ggplot(data = mpg) +
+  geom_smooth(mapping = aes(x = displ, y = hwy, color = drv))
+
+## include actual observations w/geom_point
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+
+```
+
+### Time Series
+
+```{r}
+
+homeruns <- readr::read_csv("https://raw.githubusercontent.com/jafox11/MS282/main/homeruns.csv")
+
+ggplot(data = homeruns) +
+  geom_line(mapping = aes(x = year, y = home_run_total))
+
+ggplot(data = homeruns) +
+  geom_line(mapping = aes(x = year, y = home_run_total, color = league))
+
+ggplot(data = homeruns, mapping = aes(x = year, y = home_run_total, color = league)) +
+  geom_line() +
+  geom_point()
+
+```
+
+### Box Plots
+
+```{r}
+
+ggplot(data = mpg) +
+  geom_boxplot(mapping = aes(x = drv, y = hwy))
+
+## changing order 
+
+ggplot(data = mpg) +
+  geom_boxplot(mapping = aes(x = reorder(drv,hwy), y = hwy))
+
+## flipping axes
+
+ggplot(data = mpg) +
+  geom_boxplot(mapping = aes(x = reorder(drv, hwy), y = hwy)) +
+  coord_flip()
+
+```
+
+### Bar Graphs
+
+```{r}
+
+## bar graph w/proportions
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = cut, y = stat(prop), group = 1))
+
+## setting bins
+ggplot(data = diamonds) +
+  geom_histogram(mapping = aes(x = price), binwidth = 1500)
+
+## histogram
+
+ggplot(data = diamonds) +
+  geom_histogram(mapping = aes(x = price))
+
+## position argument
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = clarity, fill = cut), position = "dodge")
+
+```
+
+## Specialty plots and graphs
+
+### Lollipop alternative to bar graph
+
+Given a dataframe with both a numerical and categorical variable.
+
+```{r, eval=FALSE}
+
+## reorder dataframe
+
+
+
+```
+
+## Compass CSS Branding
+
+```{r, eval=FALSE}
+
+/*------------- Body and header text---------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Prata&display=swap');
+
+/*-------Tab Colors--------*/
+
+.nav-pills>li>a:hover, .nav-pills>li>a:focus, .nav-pills>li.active>a,     .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+     background-color: #4AB8C1;
+     }
+ 
+ a {
+color: #4AB8C1
+}
+
+a:hover {
+ color: #133438; /* darker color when hovering */
+}
+
+ /*----------LOGO above TOC---------*/
+
+
+body {
+  font-family: 'Muli', sans-serif;
+  color: #000000;
+}
+
+.header-panel {
+  background-color: #4AB8C1;
+}
+
+.pages h1 {
+  color: #4AB8C1;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Varela Round', sans-serif;
+  color: #133438;
+}
+
+ @media (min-width: 992px) {
+    .col-md-9 {
+      width: 75%;
+      padding-left: 5em !important;
+    }
+ }
+ 
+ .tocify {
+  width: 100% !important;
+  border: none;
+}
+ 
+ /* Space Between TOC and 
+  Righthand side content on large screens */
+ 
+#TOC::before {
+  content: "";
+  display: block;
+  height: 150px;
+  margin: 2em 20px 40px 20px;
+  background-image: url("logo.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+}
+  
+ /* TOC links */
+
+.list-group-item {
+    color: #7b8a8b;
+    font-size: 16px;
+}
+
+.list-group-item.active {
+    color: #4AB8C1;
+    background-color: white;
+    border: none;
+}
+
+.list-group-item:hover, 
+.list-group-item.active:hover {
+    color: #131b23;
+    background-color: white;
+}
+
+
+#TOC {
+    max-width: fit-content;
+    white-space: nowrap;
+  }
+
+
+```
+
+### Compass Colours
+
+```{r, eval=FALSE}
+
+values=c( "#F16823", "#286169", "#BED62F", "#4AB8C1", "#286169", "#F16823", "#DEE48C","#FDB816")
+
+```
+
