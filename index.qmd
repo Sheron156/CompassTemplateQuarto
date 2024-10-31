@@ -15,12 +15,9 @@ library(unikn)
 
 ```
 
-
 This template will allow you to create a Compass standard html report. If you would like multiple tabs, ensure the tabset code above (in the curly parentheses) is placed after a main heading, this will ensure that headings below it (preceded by '\##' will be the tabs)
-       
 
 ::: panel-tabset
-
 ## Compass Branding
 
 Below you will find the RGB and HEX codes for Compass Branding.
@@ -41,7 +38,7 @@ seecol(my_pal,
        col_brd = "white", lwd_brd=1, title="Compass Colours, Hex code and RGB values")
 ```
 
-To extend the palette use the code below, changing the value after `n = `
+To extend the palette use the code below, changing the value after `n =`
 
 ```{r}
 # an extended palette; simply change n to extend the palette according to colours needed
@@ -66,12 +63,9 @@ cols
 
 ## Data Quality
 
-
-![](images/dataquality_legend.png)
-## Templates
+![](images/dataquality_legend.png) \## Templates
 
 quarto use template Sheron156/compasstypst
 
 quarto use template Sheron156/CompassTemplateQuarto
-
 :::

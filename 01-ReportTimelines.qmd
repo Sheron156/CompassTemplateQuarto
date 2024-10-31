@@ -1,23 +1,8 @@
 # All Reports List {.unnumbered}
 
-::: {.column-margin}
-
-:::
-:::: {.columns}
-
-::: {.column width="60%"}
 All of the reports in this table have a corresponding tutorial (see TOC headings Core Weekly Reports, Monthly Reports and Quarterly Reports to the left). Here is where you'll find detailed, step by step instructions.
 
-For a pdf version of the table, right click the Routine Report pdf below this table and save to disk.
-:::
-
-::: {.column width="40%"}
-**Right click to save the file to disk.**
-[![PDF Version](reference/CompassTypst.pdf)]
-:::
-
-::::
-
+For a pdf version of the table, click [here](reports-pdf.qmd).
 
 ```{r}
 #| echo: false
@@ -50,7 +35,7 @@ table<-ReportDictionary %>%
   use_compact_mode = TRUE,
   use_text_wrapping = FALSE,
   use_page_size_select = TRUE,
-  page_size_default = 10,
+  page_size_default = 20,
   #page_size_values = c(10, 25, 50, 100),
   #pagination_type = c("numbers", "jump", "simple")
 ) %>% tab_header(
@@ -79,6 +64,3 @@ table<-ReportDictionary %>%
 table
 
 ```
-
-
-
