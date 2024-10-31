@@ -5,8 +5,8 @@ project:
 website:
   title: "Data Manual"
 
-  navbar:
-    background: primary
+  #navbar:
+  #  background: "#f9f9f9"
 
   sidebar:
     background: "#f9f9f9"
@@ -20,7 +20,7 @@ website:
       - section: Routine Reports
         contents:
           - 01-ReportTimelines.qmd
-          - reports-pdf.qmd
+         # - reports-pdf.qmd
           - 02-core-reports.qmd
           - 03-BI-Solution-Data-Quality.qmd
       - section: Codebooks
