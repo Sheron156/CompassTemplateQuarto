@@ -1,6 +1,9 @@
-# How To & Branding {.unnumbered}
-
-```{r setup, include=FALSE}
+---
+title: How To & Branding
+subtitle: Some Stuff
+---
+```{r}
+#| echo: false
 
 # template comes from: https://github.com/rstudio-conf-2022/teach-ds-course-website/tree/main
 # https://rstudio-conf-2022.github.io/teach-ds-course-website/
@@ -11,11 +14,10 @@ library(dplyr)
 library(tidyverse)
 library(usethis)
 library(unikn)
-
+library(scales)
+#print(CompassColours)
 
 ```
-
-This template will allow you to create a Compass standard html report. If you would like multiple tabs, ensure the tabset code above (in the curly parentheses) is placed after a main heading, this will ensure that headings below it (preceded by '\##' will be the tabs)
 
 ::: panel-tabset
 ## Compass Branding
@@ -34,15 +36,13 @@ my_pal <- newpal(col = CompassColours, names = col_names, as_df = TRUE)
 
 # our original palette
 
-seecol(my_pal,
-       col_brd = "white", lwd_brd=1, title="Compass Colours, Hex code and RGB values")
+show_col(CompassColours)
 ```
 
 To extend the palette use the code below, changing the value after `n =`
 
 ```{r}
 # an extended palette; simply change n to extend the palette according to colours needed
-
 seecol(my_pal,
        col_brd = "white", lwd_brd=1, title="Compass Colours, Hex code and RGB values", n=16)
 ```
@@ -69,3 +69,4 @@ quarto use template Sheron156/compasstypst
 
 quarto use template Sheron156/CompassTemplateQuarto
 :::
+
