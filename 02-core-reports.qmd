@@ -1,94 +1,22 @@
-# Core Reports {-}
-
-# Report Timelines {#ReportTimelines}
-
-All of the reports in this table have a corresponding tutorial (see TOC headings Core Weekly Reports, Monthly Reports and Quarterly Reports to the left). Here is where you'll find detailed, step by step instructions.
-
-For a pdf version of the table, right click the Routine Report pdf below this table and save to disk.
-
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-
-library(dplyr)
-library(readxl)
-library(DT)
-library(gt)
-library(downloadthis)
-library(gtExtras)
-ReportDictionary <- read_excel("M:/DATA & REPORTS/Routine Reports/ReportDictionary.xlsx")
-
-#datatable(ReportDictionary, fillContainer = FALSE, width=500)
-table<-ReportDictionary %>% gt() |>
-  cols_width(
-    Report ~ px(300),
-    #`Data Destination` ~ px(200),
-    `Purpose`~px(400)) %>%
-  opt_interactive(
-  active = TRUE,
-  use_pagination = TRUE,
-  use_pagination_info = TRUE,
-  use_sorting = TRUE,
-  use_search = TRUE,
- # use_filters = TRUE,
-  use_resizers = TRUE,
-  use_highlight = TRUE,
-  use_compact_mode = TRUE,
-  use_text_wrapping = FALSE,
-  use_page_size_select = TRUE,
-  page_size_default = 10,
-  #page_size_values = c(10, 25, 50, 100),
-  #pagination_type = c("numbers", "jump", "simple")
-) %>% tab_header(
-  title="Weekly, Monthly and Quarterly Reports Summary",
-  subtitle="Click report name for step by step instructions. Download the entire table via button below"
-)|>
- # cols_hide(columns = trim) %>%
-  opt_stylize(style=6, color="cyan")|>
-  tab_footnote(
-    footnote = "Click the download button to save the table to your drive.",
-    locations = cells_body(columns = 1, rows = 1)
-  ) %>% tab_source_note(ReportDictionary %>%
-                        download_this(
-                          output_name = "ReportTimelines",
-                          output_extension = ".xlsx",
-                          button_label = "Download Excel",
-                          button_type="primary"
-                        )
-                        ) %>% sub_missing(
-  columns = everything(),
-  rows = everything(),
-  missing_text = "---"
-) |>
-  fmt_url(columns = 'Report')
-
-table
-
-```
-
-**Right click to save the file to disk.**
-
-[![](reference/CompassTypst.pdf)](reference/CompassTypst.pdf)
-
-# Core Weekly Reports {#WeeklyReports}
+# Weekly Reports {.unnumbered, #WeeklyReports}
 
 The following outlines how to pull the **weekly core data** for the BI dashboard. The files should be pulled every Monday morning and placed in their corresponding folder on the Master drive (see below).
 
 ## ASEBA Reports {#ASEBAWeekly}
 
-Head to <https://aseba-web.org/SignIn?ReturnUrl=%2f> and log in.
-
-Click Clients on left (above list of clients)
-
-Click Directory at the top and Export Data.
-
-Select Scored Data as file type --\> Next --\> Excel --\> Next --\> No
-
-Once loaded, click Export and save file to (overwriting previous file):
+1.  Head to <https://aseba-web.org/SignIn?ReturnUrl=%2f> and log in.
+2.  Click **Clients** on left (above list of clients)
+3.  Click **Directory** at the top and **Export Data**.
+4.  Select **Scored Data** as file type --\> **Next** --\> **Excel** --\> **Next** --\> **No**
+5.  Once loaded, click **Export** and save file to (overwriting previous file):
 
 ```{r, eval=FALSE}
 
 M:\DATA & REPORTS\Clinical & Client Services\Clinical Data\ASEBA
 
 ```
+
+## EMHware Weekly Reports
 
 The following core reports require you to be logged into EMHware and have clicked **Reports** from the global menu.
 

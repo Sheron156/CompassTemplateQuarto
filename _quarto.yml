@@ -11,6 +11,7 @@ book:
     - index.qmd
     - part: Routine Reports
       chapters:
+        - 01-ReportTimelines.qmd
         - 02-core-reports.qmd
         - 03-BI-Solution-Data-Quality.qmd
     - part: Codebooks
