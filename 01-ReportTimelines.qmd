@@ -1,4 +1,4 @@
-#  {#ReportTimelines}
+# List of all Routine Reports {-}
 
 All of the reports in this table have a corresponding tutorial (see TOC headings Core Weekly Reports, Monthly Reports and Quarterly Reports to the left). Here is where you'll find detailed, step by step instructions.
 

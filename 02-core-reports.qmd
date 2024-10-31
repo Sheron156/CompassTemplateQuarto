@@ -1,9 +1,4 @@
----
-number-sections: true
-number-depth: 3
----
-
-# Weekly Reports {#WeeklyReports}
+# Weekly Reports {-}
 
 The following tutorial will walk you through refreshing all of the data for the BI Core Dashboard. The files should be pulled every Monday morning and placed in their corresponding folder on the Master drive (see below).
 

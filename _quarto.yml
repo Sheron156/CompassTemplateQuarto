@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "Compass Tutorials"
+  title: "Data Manual"
   author: Office of System Performance
   date: last-modified
   page-navigation: true
@@ -42,14 +42,10 @@ format:
     lightbox: true
     warnings: false
     messages: false
-    number-sections: false
     embed-resources: true
     other-links:
       - text: Leave us feedback
         href: https://www.research.net/r/ManualFeedback
-  CompassTypst-typst:
-    keep-typ: true
-
 
 
 page-footer:

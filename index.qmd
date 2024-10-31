@@ -1,10 +1,11 @@
 ---
-title: "How to use this guide"
+title: How to use this guide
 subtitle: "Data Analyst Tasks and Utilities"
 author: "Office of System Performance"
 date: last-modified # adds today's date
-number-sections: false
 ---
+
+# How To {.unnumbered}
 
 ```{r setup, include=FALSE}
 
@@ -21,12 +22,9 @@ library(unikn)
 
 ```
 
-# How to use this guide {-}
 
 This template will allow you to create a Compass standard html report. If you would like multiple tabs, ensure the tabset code above (in the curly parentheses) is placed after a main heading, this will ensure that headings below it (preceded by '\##' will be the tabs)
-
-
-         
+       
 
 ::: panel-tabset
 
