@@ -4,6 +4,7 @@ project:
 
 book:
   title: "Data Manual"
+  subtitle: "Data Analyst Tasks and Utilities"
   author: Office of System Performance
   date: last-modified
   page-navigation: true
@@ -40,9 +41,10 @@ format:
     code-copy: true
     code-overflow: wrap
     lightbox: true
-    warnings: false
-    messages: false
+    warning: false
+    message: false
     embed-resources: true
+    numbered-sections: true
     other-links:
       - text: Leave us feedback
         href: https://www.research.net/r/ManualFeedback

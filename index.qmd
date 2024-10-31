@@ -1,11 +1,4 @@
----
-title: How to use this guide
-subtitle: "Data Analyst Tasks and Utilities"
-author: "Office of System Performance"
-date: last-modified # adds today's date
----
-
-# How To {.unnumbered}
+# How To & Branding {.unnumbered}
 
 ```{r setup, include=FALSE}
 
