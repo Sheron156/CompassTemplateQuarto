@@ -1,5 +1,5 @@
 ---
-title: Quarterly & Bi-Annual Reports 
+title: Quarterly & Bi-Annual 
 ---
 
 # BI Solution Quarterly Submission {#BiQuarterly}
