@@ -6,7 +6,6 @@ For a pdf version of the table, click [here](reports-pdf.qmd).
 
 ```{r}
 #| echo: false
-#| column: page-right
 #| 
 library(tidyverse)
 library(readxl)

@@ -1,10 +1,12 @@
-# Quarterly & Bi-Annual Reports {-}
+---
+title: Quarterly & Bi-Annual Reports 
+---
 
-## BI Solution Quarterly Submission {#BiQuarterly}
+# BI Solution Quarterly Submission {#BiQuarterly}
 
-Here you will find instructions to complete many if not all of the reoccurring data reports and submissions the data analyst is responsible for producing.
+Here you will find instructions to complete many if not all of the reoccurring data reports and submissions the data analyst is responsible for producing. To view a pdf of BI numbers for previous quarters, you can head to `M:\Ministry funding (contracts, budgets, quarterly reports)\BI Solution\\2023-24`.
 
-::: fyi
+::: {.callout-important appearance="simple"}
 The BI Solution data submissions must be completed on a quarterly basis based on the fiscal year. Our fiscal year runs from April 1 to March 31 the following year. Q1 = April 1, 2023 to June 30, 2023. All of these reports are running tasks on Asana.
 
 Once the final submission has been uploaded, download a pdf version of the dashboard and place using naming convention found in the folder:
@@ -14,15 +16,15 @@ M:\Ministry funding (contracts, budgets, quarterly reports)\BI Solution
 ```
 :::
 
-Every quarter, mental health agencies in Ontario are required to submit data. ASK NICK FOR SOME WORDAGE FOR HERE.
-
 To prepare for a submission you will first submit the data in the same way that you will at the end of the month. This is to check for submission errors. You will also complete several data quality reports (as outlined below) on the same schedule with the goal being to give yourself and the AA's enough time to correct input errors before the final submission due date.
 
 These steps should be completed at the beginning of the month following the quarter you're reporting and again at the end of the quarter for your final submission. For example, if you're reporting on Q1 (April 1, 2023 - June 30, 2023), you would begin preparing in early July for the final submission which is the last day of July.
 
 We recommended running through these analysis several times depending on how problematic the data is and once more after the AA's have completed their corrections (nearer the end of the month) to ensure the Ministry receives the most accurate data. Send the final submission one day before the end of the reporting month so that you have a day to fix any last minute things that may be off.
 
-### Submit BI Data to our lead agency site (the first step in any BI submission) {#LeadAgencyQuarterly}
+### 1. Submit BI Data to our lead agency site {#LeadAgencyQuarterly}
+
+This is the first step in any BI submission.
 
 Complete the following:
 
@@ -301,7 +303,7 @@ The following reports are required from emhware:
 
 Set the dates to:
 
-Receiving Services Start: [Start of past quarter (e.g., Oct 1)] Receiving Services End: [End of past quarter (e.g., Dec 31)]
+Receiving Services Start: \[Start of past quarter (e.g., Oct 1)\] Receiving Services End: \[End of past quarter (e.g., Dec 31)\]
 
 For these program(s):
 
@@ -514,7 +516,7 @@ M:\DATA & REPORTS\Clinical & Client Services\Clinical Reports\CCN Waitlists
 
 ```
 
-for the current quarter and use the naming convention CCN Waitlist Reporting [FY Start Year]-[FY End Year] Q[Past Fiscal Quarter].xlsx. Update the Report Date accordingly.
+for the current quarter and use the naming convention CCN Waitlist Reporting \[FY Start Year\]-\[FY End Year\] Q\[Past Fiscal Quarter\].xlsx. Update the Report Date accordingly.
 
 7.  Once complete please send to Michelle Gauthier and the Director of Clinical and Client Services Isabelle Chausse (IChausse\@compassne.ca) and CC the Supervisor of System Performance ([nschwabe\@compassne.ca](mailto:nschwabe@compassne.ca){.email}). Before sending your first report please let me (Nick) review first.
 
@@ -534,7 +536,7 @@ M:\DATA & REPORTS\Clinical & Client Services\Clinical Reports\FRIENDS
 
 1.  Send the FRIENDS Group Tracker_V2 to Lise Longschamp and request that she complete the form for all groups that ran for the last quarter (e.g. between April 1 and June 30, 2023) and ask that she return it by the 15th of the month (or closest reasonable date).
 
-2.  With the information that Lise sends you, fill out the FRIENDS reporting template in the same folder. Save a pdf of the reporting template using the following naming convention: Q[Calendar Year Quarter Number]*[Your First Name All Caps]*[Your Last Name All Caps]\_QR[Calendar Year] .pdf (e.g., Q1_SHAUNA_HERON_QR2023 .pdf)
+2.  With the information that Lise sends you, fill out the FRIENDS reporting template in the same folder. Save a pdf of the reporting template using the following naming convention: Q\[Calendar Year Quarter Number\]*\[Your First Name All Caps\]*\[Your Last Name All Caps\]\_QR\[Calendar Year\] .pdf (e.g., Q1_SHAUNA_HERON_QR2023 .pdf)
 
 3.  Save a copy to the same folder
 
